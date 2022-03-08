@@ -4,7 +4,7 @@
 
 ## DESCRIPTION
 
-Increases base movement speed for Miriam to 150% / 1.5x.
+Increases base movement speed for Miriam to 150% / 1.5x.  
 Will stack with movement bonuses due to how the mechanics work.
 
 ## COMPATIBILITY
