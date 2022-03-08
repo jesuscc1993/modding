@@ -21,6 +21,10 @@ It will not disable visual effects for the following shards:
 Will be incompatible with any mod updating file  
 `Core\DataTable\PB_DT_ShardMaster.uasset`.
 
+## DISCLAIMER
+
+The provided mod will also disable the voice line for Tis Rozain because both changes are done to the same file and I am too lazy to provide separate files.
+
 ## CREDITS
 
 Kudos to _ashtar01_ for his "Words of Wisdom / Healing / Regenerate Invisible" mod, which this one was based on.
