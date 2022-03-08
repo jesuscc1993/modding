@@ -4,7 +4,7 @@
 
 ## DESCRIPTION
 
-Disables visual effects for the following shards:
+**Disables visual effects for the following shards**:
 
 - Words of Wisdom
 - Regenerate
@@ -16,7 +16,7 @@ It will not disable visual effects for the following shards:
 - Detective's Eye
   - disabling the effect for this shard requires changing a different file; you can use _masamunedragon_'s "Invisible Detective Eye and Bloodsteal Rings" mod to achieve this
 
-Disables the voice line for Tis Rozain. The shard sound will still play, but Miriam will not shout the shard's name.
+**Disables the voice line for Tis Rozain**. The shard sound will still play, but Miriam will not shout the shard's name.
 This change is included because both changes are done to the same file and I am too lazy to provide separate files.
 
 ## COMPATIBILITY
