@@ -22,5 +22,5 @@ Will be incompatible with any mod updating file
 
 ## CREDITS
 
-Kudos to _ithinkandicode_ for his "Faster Movement" mod, which this one was based on.  
+Kudos to _ithinkandicode_ for their "Faster Movement" mod, which this one was based on.  
 I simply changed the speed increase and repacked the file.

@@ -27,5 +27,5 @@ Will be incompatible with any mod updating file
 
 ## CREDITS
 
-Kudos to _ashtar01_ for his "Words of Wisdom / Healing / Regenerate Invisible" mod, which this one was based on.
+Kudos to _ashtar01_ for their "Words of Wisdom / Healing / Regenerate Invisible" mod, which this one was based on.
 I used their mod as a base, reverting their removal of the effects for the healing shard in order to prevent a resulting bug that prevented it from working properly.
