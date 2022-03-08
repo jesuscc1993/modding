@@ -16,11 +16,11 @@ Will be incompatible with any mod updating file
 
 As a result of the increased speed you might be able to reach early some places you wouldn't otherwise be able to, so bear it in mind if you want to prevent using that as a exploit.
 
+## DISCLAIMER
+
+Provided screenshot is not to be taken seriously, speed lines will (sadly) not display when Miriam moves.
+
 ## CREDITS
 
 Kudos to _ithinkandicode_ for his "Faster Movement" mod, which this one was based on.  
 I simply changed the speed increase and repacked the file.
-
-## DISCLAIMER
-
-Provided screenshot is not to be taken seriously, speed lines will (sadly) not display when Miriam moves.
