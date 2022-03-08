@@ -16,7 +16,7 @@ As a result of the increased speed you might be able to reach early some places 
 
 ## CREDITS
 
-Kudos to _ithinkandicode_ for his Faster Movement mod, which this one was based on.  
+Kudos to _ithinkandicode_ for his "Faster Movement" mod, which this one was based on.  
 I simply changed the speed increase and repacked the file.
 
 ## DISCLAIMER
