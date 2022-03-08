@@ -9,7 +9,8 @@ Will stack with movement bonuses due to how the mechanics work.
 
 ## COMPATIBILITY
 
-Will be incompatible with any mod updating file `Core\DataTable\PB_DT_EnchantaParameterInitialSetting.uasset`.
+Will be incompatible with any mod updating file  
+`Core\DataTable\PB_DT_EnchantaParameterInitialSetting.uasset`.
 
 ## WARNING
 

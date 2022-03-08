@@ -18,7 +18,8 @@ It will not disable visual effects for the following shards:
 
 ## COMPATIBILITY
 
-Will be incompatible with any mod updating file `Core\DataTable\PB_DT_ShardMaster.uasset`.
+Will be incompatible with any mod updating file  
+`Core\DataTable\PB_DT_ShardMaster.uasset`.
 
 ## CREDITS
 
