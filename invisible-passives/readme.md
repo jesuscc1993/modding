@@ -16,14 +16,14 @@ It will not disable visual effects for the following shards:
 - Detective's Eye
   - disabling the effect for this shard requires changing a different file; you can use _masamunedragon_'s "Invisible Detective Eye and Bloodsteal Rings" mod to achieve this
 
+## DISCLAIMER
+
+The provided mod will also disable the voice line for Tis Rozain because both changes are done to the same file and I am too lazy to provide separate files.
+
 ## COMPATIBILITY
 
 Will be incompatible with any mod updating file  
 `Core\DataTable\PB_DT_ShardMaster.uasset`.
-
-## DISCLAIMER
-
-The provided mod will also disable the voice line for Tis Rozain because both changes are done to the same file and I am too lazy to provide separate files.
 
 ## CREDITS
 
