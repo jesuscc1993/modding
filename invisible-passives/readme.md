@@ -25,7 +25,3 @@ Will be incompatible with any mod updating file
 
 Kudos to _ashtar01_ for his "Words of Wisdom / Healing / Regenerate Invisible" mod, which this one was based on.
 I simply reverted his removal of the effects for the healing shard in order to prevent a resulting bug that prevented it from working properly.
-
-## DISCLAIMER
-
-Provided screenshot is not to be taken seriously, speed lines will (sadly) not display when Miriam moves.
