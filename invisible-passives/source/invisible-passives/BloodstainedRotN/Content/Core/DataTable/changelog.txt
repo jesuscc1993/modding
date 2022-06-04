@@ -1,0 +1,10 @@
+SkilledMoneyispower.BulletSTR "P0000_MONEY_IS_POWER" > "None"
+
+SkilledRegeneration.BulletSTR "P0000_REGENERATION" > "None"
+
+SkilledWisdomwords.BulletSTR "P0000_WISDOM_WORDS" > "None"
+
+TissRosain.VoiceIdArray ["Vo_P1000_080_jp"] > ["None"]
+
+Wisdomwords.BulletSTR "P0000_WISDOM_WORDS" > "None"
+Wisdomwords.BulletOverRoom true > false
