@@ -4,6 +4,8 @@ SkilledRegeneration.BulletSTR "P0000_REGENERATION" > "None"
 
 SkilledWisdomwords.BulletSTR "P0000_WISDOM_WORDS" > "None"
 
+SkilledDetectiveeye.BulletSTR "P0000_DETECTIVE_EYE" > "None"
+
 TissRosain.VoiceIdArray ["Vo_P1000_080_jp"] > ["None"]
 
 Wisdomwords.BulletSTR "P0000_WISDOM_WORDS" > "None"
