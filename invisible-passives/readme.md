@@ -6,15 +6,14 @@
 
 **Disables visual effects for the following shards**:
 
-- Detective Eye
 - Money is Power
 - Regenerate
 - Words of Wisdom
 
-It will not disable visual effects for the following shards:
+It will **not** disable visual effects for the following shards, as it results in them not working properly:
 
+- Detective Eye
 - Healing
-  - disabling the effect for this shard results in the passive not working properly
 
 **Disables voice lines for the following shards**:
 
@@ -27,23 +26,22 @@ This change is included because both changes are done to the same file and I am 
 
 The following changes have been made to `PB_DT_ShardMaster.uasset`:
 
-- SkilledDetectiveeye
-  - `BulletSTR "P0000_DETECTIVE_EYE" > "None"`
-- SkilledMoneyispower
+- Moneyispower, SkilledMoneyispower
   - `BulletSTR "P0000_MONEY_IS_POWER" > "None"`
-- SkilledRegeneration
+- Regeneration, SkilledRegeneration
   - `BulletSTR "P0000_REGENERATION" > "None"`
-- SkilledWisdomwords
+- Wisdomwords, SkilledWisdomwords
   - `BulletSTR "P0000_WISDOM_WORDS" > "None"`
+  
+  
 - TissRosain
   - `VoiceIdArray ["Vo_P1000_080_jp"] > ["None"]`
-- Wisdomwords
-  - `BulletOverRoom true > false`
-  - `BulletSTR "P0000_WISDOM_WORDS" > "None"`
 
 This mod will be incompatible with any other updating this same file.
 
 ## CREDITS
 
-Kudos to _ashtar01_ for their "Words of Wisdom / Healing / Regenerate Invisible" mod, which this one was based on.
+Kudos to [ashtar01](https://www.nexusmods.com/bloodstainedritualofthenight/users/883766) for their ["Words of Wisdom / Healing / Regenerate Invisible"](https://www.nexusmods.com/bloodstainedritualofthenight/mods/96) mod, which this one was based on.
 I used their mod as a base, reverting their removal of the effects for the healing shard in order to prevent a resulting bug that prevented it from working properly.
+
+Thanks to [joneirik](https://www.nexusmods.com/bloodstainedritualofthenight/users/46391987) for their support with modding the game.
