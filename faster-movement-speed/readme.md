@@ -1,10 +1,14 @@
-# Faster Movement Speed
+# Faster Movement Speed (multiple options)
 
 ![](thumbnail.jpg)
 
 ## DESCRIPTION
 
-Increases base movement speed for Miriam to 150% / 1.5x.  
+Increases base movement speed for Miriam to one of the following options:
+- 150% / 1.5x
+- 125% / 1.25x
+- 112.5% / 1.125x
+
 **Will stack with movement bonuses** due to how the mechanics work.
 
 ## WARNING
