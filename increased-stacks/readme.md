@@ -10,6 +10,8 @@ includes two versions:
 - Cheat version - Includes HP/MP recovery items
 - Fair version - Excludes HP/MP recovery items
 
+Mod is safe to uninstall; the item counts will remain the same but you will not be able to acquire more copies of each item past its vanilla cap.
+
 ## TECHNICAL DETAILS
 
 Field `max` has been updated to `999` in file `PB_DT_ItemMaster.uasset` for the affected items.
