@@ -4,7 +4,7 @@
 
 ## DESCRIPTION
 
-**Increases the stack size for consumables to 99, like the rest of items.**
+**Increases the maximum amount of all stackable items to 999.**
 
 includes two versions:
 - Cheat version - Includes HP/MP recovery items
@@ -12,7 +12,7 @@ includes two versions:
 
 ## TECHNICAL DETAILS
 
-Field `max` has been updated to `99` in file `PB_DT_ItemMaster.uasset` for the affected items.
+Field `max` has been updated to `999` in file `PB_DT_ItemMaster.uasset` for the affected items.
 
 This mod will be incompatible with any other updating this same file.
 
