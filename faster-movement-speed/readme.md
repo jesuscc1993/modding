@@ -17,7 +17,7 @@ As a result of the increased speed you might be able to reach early some places 
 
 ## TECHNICAL DETAILS
 
-The following changes have been made to file `PB_DT_EnchantParameterInitialSetting.uasset`:
+The following changes have been made to file `PB_DT_EnchantaParameterInitialSetting.uasset`:
 
 - `NormalMoveUpRate 1.0 > 1.5`
 
