@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "buildertools",
+  "version": "${version}",
+  "name": "Builder Tools",
+  "description": "Adds a new set of powerful wooden tools designed for building.",
+  "authors": [
+    "MetalTxus"
+  ],
+  "contact": {
+    "homepage": "https://github.com/jesuscc1993/fabric-builder-tools",
+    "sources": "https://github.com/jesuscc1993/fabric-builder-tools"
+  },
+  "license": "CC BY-NC 2.0",
+  "icon": "assets/buildertools/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fabricmc.buildertools.BuilderToolsMod"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
