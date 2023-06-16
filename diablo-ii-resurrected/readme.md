@@ -2,4 +2,4 @@
 
 - ### [10x10 Horadric Cube for D2RMM](./10x10Cube)
 
-  ![](./10x10Cube/_meta/mouse.jpg)
+  ![mouse.jpg](./10x10Cube/_meta/mouse.jpg)

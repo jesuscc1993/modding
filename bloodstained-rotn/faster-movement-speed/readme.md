@@ -1,6 +1,6 @@
 # Faster Movement Speed (multiple options)
 
-![](thumbnail.jpg)
+![thumbnail.jpg](thumbnail.jpg)
 
 ## DESCRIPTION
 

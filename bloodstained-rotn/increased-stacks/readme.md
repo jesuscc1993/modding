@@ -1,6 +1,6 @@
 # Invisible Passives and Silent Tis Rozain
 
-![](thumbnail.jpg)
+![thumbnail.jpg](thumbnail.jpg)
 
 ## DESCRIPTION
 
