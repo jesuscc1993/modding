@@ -32,8 +32,6 @@ The following changes have been made to `PB_DT_ShardMaster.uasset`:
   - `BulletSTR "P0000_REGENERATION" > "None"`
 - Wisdomwords, SkilledWisdomwords
   - `BulletSTR "P0000_WISDOM_WORDS" > "None"`
-  
-  
 - TissRosain
   - `VoiceIdArray ["Vo_P1000_080_jp"] > ["None"]`
 

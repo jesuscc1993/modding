@@ -5,6 +5,7 @@
 ## DESCRIPTION
 
 Increases base movement speed for Miriam to one of the following options:
+
 - 150% / 1.5x
 - 125% / 1.25x
 - 112.5% / 1.125x

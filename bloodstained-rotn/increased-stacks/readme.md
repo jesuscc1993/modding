@@ -7,6 +7,7 @@
 **Increases the maximum amount of all stackable items to 999.**
 
 includes two versions:
+
 - Cheat version - Includes HP/MP recovery items
 - Fair version - Excludes HP/MP recovery items
 
