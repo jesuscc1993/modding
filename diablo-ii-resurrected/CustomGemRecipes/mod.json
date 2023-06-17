@@ -1,0 +1,32 @@
+{
+  "name": "Custom Gem Recipes",
+  "description": "Adds extra gem upgrade/downgrade recipes with configurable gem counts.",
+  "author": "MetalTxus",
+  "version": "1.0.0",
+  "config": [
+    {
+      "id": "gemUpgradeCount",
+      "type": "number",
+      "name": "Upgrade cost (2-*)",
+      "description": "Number of gems required to upgrade (will replace the default recipes).",
+      "defaultValue": 3,
+      "minValue": 2
+    },
+    {
+      "id": "enableDowngrade",
+      "type": "checkbox",
+      "name": "Enable downgrade",
+      "description": "Enable to add gem downgrade recipes (amount returned to be configured below).",
+      "defaultValue": true
+    },
+    {
+      "id": "gemDowngradeCount",
+      "type": "number",
+      "name": "Downgrade return (2-3)",
+      "description": "Number of gems return by a downgrade.",
+      "defaultValue": 3,
+      "minValue": 2,
+      "maxValue": 3
+    }
+  ]
+}
