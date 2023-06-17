@@ -1,7 +1,8 @@
 {
   "name": "Custom Gem Recipes",
-  "description": "Adds extra gem upgrade/downgrade recipes with configurable gem counts.",
+  "description": "Overrides the amount of gems required to upgrade to a higher tier. Optionally, adds downgrade recipes with yet another configurable amount.",
   "author": "MetalTxus",
+  "website": "https://www.nexusmods.com/diablo2resurrected/mods/381",
   "version": "1.0.0",
   "config": [
     {
