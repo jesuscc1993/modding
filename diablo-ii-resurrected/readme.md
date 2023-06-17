@@ -6,5 +6,6 @@
 
 - ### [Custom Gem Recipes](./CustomGemRecipes)
 
-  ! BROKEN. DO NOT USE !  
-  The new upgrade recipes don't always work and the downgrade recipes return the wrong gem type.
+  Overrides the amount of gems required to upgrade to a higher tier.  
+  Optionally, adds downgrade recipes with yet another configurable amount.  
+  It does not affect the amount of gems required to transmute other items.  
