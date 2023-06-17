@@ -6,6 +6,7 @@ const gemTiers = [
   { name: 'Flawed', id: 'f' },
   { name: 'Standard', id: 's' },
   { name: 'Flawless', id: 'z' },
+  { name: 'Perfect', id: 'p' },
 ];
 const gemTypes = [
   { name: 'Amethyst', prefix: 'g', suffix: 'v' },
