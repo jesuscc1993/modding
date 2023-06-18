@@ -14,6 +14,12 @@
 
   ![demo.jpg](./CustomGemRecipes/_meta/demo.png)
 
+- ### [Custom Skill Level Requirements](./CustomSkillLevelRequirements)
+
+  Applies a multiplier to skill level requirements, decreasing or increasing requirements as desired.
+
+  ![demo.jpg](./CustomSkillLevelRequirements/_meta/demo.png)
+
 - ### [Invisible Helmets](./InvisibleHelmets)
 
   Turns helmets invisble by scaling them down to 0.

@@ -1,0 +1,17 @@
+{
+  "name": "Custom Skill Level Requirements",
+  "description": "Applies a multiplier to skill level requirements, decreasing or increasing requirements as desired.",
+  "author": "MetalTxus",
+  "website": "https://www.nexusmods.com/diablo2resurrected/mods/383",
+  "version": "1.0.0",
+  "config": [
+    {
+      "id": "levelRequirementMultiplier",
+      "type": "number",
+      "name": "Level requirement multiplier",
+      "description": "1 = lvl 30 / 0.66 = lvl 20 / 0.5 = lvl 15 / 2x = lvl 60",
+      "defaultValue": 1,
+      "minValue": 0.1
+    }
+  ]
+}
