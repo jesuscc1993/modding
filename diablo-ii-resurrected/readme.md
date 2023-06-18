@@ -13,3 +13,9 @@
   It does not affect the amount of gems required to transmute other items.
 
   ![mouse.jpg](./CustomGemRecipes/_meta/demo.png)
+
+- ### [Invisible Helmets](./InvisibleHelmets)
+
+  Turns helmets invisble by scaling them down to 0.
+  Only works on playable characters, by overriding the scale for each class to 0.
+  Modifying the initial scale would make them invisible as well when dropped, so I don't think it would be possible to hide them for mercenaries too.

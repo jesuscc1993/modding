@@ -1,0 +1,191 @@
+{
+  "dependencies": {
+    "animations": [],
+    "json": [
+      {
+        "path": "data/hd/items/dropped_items/dropped_items_helms_barb_flip.json"
+      }
+    ],
+    "models": [
+      {
+        "path": "data/hd/items/dropped_items/jawbone_cap.model"
+      }
+    ],
+    "objecteffects": [],
+    "other": [],
+    "particles": [],
+    "physics": [],
+    "skeletons": [
+      {
+        "path": "data/hd/items/dropped_items/skeleton/dropped_items_helmet.skeleton"
+      }
+    ],
+    "textures": [
+      {
+        "path": "data/hd/items/armor/helmet/jawbone_cap/textures/armor_jawbone_cap_ALB.texture"
+      },
+      {
+        "path": "data/hd/items/armor/helmet/jawbone_cap/textures/armor_jawbone_cap_KTINT.texture"
+      },
+      {
+        "path": "data/hd/items/armor/helmet/jawbone_cap/textures/armor_jawbone_cap_NRM.texture"
+      },
+      {
+        "path": "data/hd/items/armor/helmet/jawbone_cap/textures/armor_jawbone_cap_ORM.texture"
+      }
+    ],
+    "variantdata": []
+  },
+  "entities": [
+    {
+      "components": [
+        {
+          "animations": [],
+          "doNotInheritRotation": false,
+          "doNotUseHDHeight": false,
+          "hideAllMeshWhenInOpenedMode": false,
+          "name": "component_root",
+          "onCreateEventName": "",
+          "rotationOverride": {
+            "w": 0.9238795,
+            "x": 0,
+            "y": 0.3826834,
+            "z": 0
+          },
+          "state_machine_filename": "data/hd/items/dropped_items/dropped_items_helms_barb_flip.json",
+          "type": "UnitRootComponent"
+        },
+        {
+          "filename": "data/hd/items/dropped_items/skeleton/dropped_items_helmet.skeleton",
+          "name": "component_skeleton",
+          "type": "SkeletonDefinitionComponent"
+        },
+        {
+          "defaultLayerChange": {
+            "layersToHide": 32,
+            "layersToShow": 128,
+            "name": "entity_root_ChangeMeshLayersOnAttach_defaultLayerChange",
+            "type": "MeshLayerChange"
+          },
+          "name": "entity_root_ChangeMeshLayersOnAttach",
+          "playerClassOverrides": {},
+          "type": "ChangeMeshLayersOnAttachComponent"
+        },
+        {
+          "name": "entity_root_OverrideAttachmentTransform",
+          "playerClassTransforms": {
+            "0": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Amazon",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "1": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Sorceress",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "2": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Necromancer",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "3": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Paladin",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "4": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Barbarian",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "5": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Druid",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            },
+            "6": {
+              "name": "entity_root_OverrideAttachmentTransform_playerClassTransforms_Assassin",
+              "scale": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "type": "Transform"
+            }
+          },
+          "type": "OverrideAttachmentTransformComponent"
+        },
+        {
+          "inheritOnlyPosition": false,
+          "name": "entity_root_TransformDefinition",
+          "orientation": {
+            "w": 0.9914449,
+            "x": 0,
+            "y": 0.130526185,
+            "z": 0
+          },
+          "position": {
+            "x": -0.3,
+            "y": 0,
+            "z": -0.15
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "type": "TransformDefinitionComponent"
+        }
+      ],
+      "id": 1111959537,
+      "name": "entity_root",
+      "type": "Entity"
+    },
+    {
+      "components": [
+        {
+          "filename": "data/hd/items/dropped_items/jawbone_cap.model",
+          "floorModel": false,
+          "ghostShadows": false,
+          "lightMask": 19,
+          "name": "component_model_jawbone_cap",
+          "shadowMask": 3,
+          "terrainBlendEnableYUpBlend": false,
+          "terrainBlendMode": 1,
+          "type": "ModelDefinitionComponent",
+          "visibleLayers": 1
+        }
+      ],
+      "id": 3710257997,
+      "name": "entity_model",
+      "type": "Entity"
+    }
+  ],
+  "name": "jawbone_cap",
+  "type": "UnitDefinition"
+}
