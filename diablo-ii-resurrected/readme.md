@@ -18,7 +18,13 @@
 
   Applies a multiplier to skill level requirements, decreasing or increasing requirements as desired.
 
-  ![demo.jpg](./CustomSkillLevelRequirements/_meta/demo.png)
+  ![demo.png](./CustomSkillLevelRequirements/_meta/demo.png)
+
+- ### [Custom Gem Recipes](./ImprovedPotionVisibility)
+
+  Reshuffles and replaces potion textures to make them easier to tell apart.
+
+  ![demo.png](./ImprovedPotionVisibility/_meta/demo.png)
 
 - ### [Invisible Helmets](./InvisibleHelmets)
 
