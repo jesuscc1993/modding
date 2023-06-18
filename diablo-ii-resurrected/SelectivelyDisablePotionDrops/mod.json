@@ -1,0 +1,93 @@
+{
+  "name": "Selectively Disable Potion Drops",
+  "description": "Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops. Does not affect fixed loot, such as sparkling chests or boses. Does not affect fixed loot, such as sparkling chests or boses.",
+  "author": "MetalTxus",
+  "website": "https://www.nexusmods.com/diablo2resurrected/mods/385",
+  "version": "1.0.0",
+  "config": [
+    {
+      "id": "disablehp1",
+      "type": "checkbox",
+      "name": "Disable HP 1",
+      "description": "Minor Healing Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablehp2",
+      "type": "checkbox",
+      "name": "Disable HP 2",
+      "description": "Light Healing Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablehp3",
+      "type": "checkbox",
+      "name": "Disable HP 3",
+      "description": "Healing Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablehp4",
+      "type": "checkbox",
+      "name": "Disable HP 4",
+      "description": "Greater Healing Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablehp5",
+      "type": "checkbox",
+      "name": "Disable HP 5",
+      "description": "Super Healing Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablemp1",
+      "type": "checkbox",
+      "name": "Disable MP 1",
+      "description": "Minor Mana Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablemp2",
+      "type": "checkbox",
+      "name": "Disable MP 2",
+      "description": "Light Mana Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablemp3",
+      "type": "checkbox",
+      "name": "Disable MP 3",
+      "description": "Mana Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablemp4",
+      "type": "checkbox",
+      "name": "Disable MP 4",
+      "description": "Greater Mana Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablemp5",
+      "type": "checkbox",
+      "name": "Disable MP 5",
+      "description": "Super Mana Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablervs",
+      "type": "checkbox",
+      "name": "Disable RV 1",
+      "description": "Rejuvenation Potion",
+      "defaultValue": false
+    },
+    {
+      "id": "disablervl",
+      "type": "checkbox",
+      "name": "Disable RV 2",
+      "description": "Full Rejuvenation Potion",
+      "defaultValue": false
+    }
+  ]
+}

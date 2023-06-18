@@ -33,3 +33,8 @@
   Modifying the initial scale would make them invisible as well when dropped, so I don't think it would be possible to hide them for mercenaries too.
 
   ![demo.jpg](./InvisibleHelmets/_meta/demo.jpg)
+
+- ### [Selectively Disable Potion Drops](./SelectivelyDisablePotionDrops)
+
+  Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops.
+  Does not affect fixed loot, such as sparkling chests or boses.
