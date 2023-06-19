@@ -1,0 +1,35 @@
+{
+  "name": "SmallerItems",
+  "description": "Scales down the space items take in the inventory by a configurable scale factor.",
+  "author": "MetalTxus",
+  "website": "https://www.nexusmods.com/diablo2resurrected/mods/???",
+  "version": "1.0.0",
+  "config": [
+    {
+      "id": "scale",
+      "type": "number",
+      "name": "Scale",
+      "defaultValue": 0.4,
+      "maxValue": 1,
+      "minValue": 0.2
+    },
+    {
+      "id": "armor",
+      "type": "checkbox",
+      "name": "Armor",
+      "defaultValue": true
+    },
+    {
+      "id": "weapons",
+      "type": "checkbox",
+      "name": "Weapons",
+      "defaultValue": true
+    },
+    {
+      "id": "misc",
+      "type": "checkbox",
+      "name": "Everything else",
+      "defaultValue": true
+    }
+  ]
+}
