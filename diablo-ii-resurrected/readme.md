@@ -39,19 +39,24 @@
   Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops.
   Does not affect fixed loot, such as sparkling chests or boses.
 
-- ### [Smaller Grid Items](./SmallerGridItems/readme.md)
+- ### [Smaller Grid Items](./SmallerGridItems)
 
   Scales down the space items take in the inventory to a maximum of two slots.  
-  Affects the maximum amount of sockets they can have.
+  Has separate toggles for weapons, armor and miscellanous items. Mix as you please.  
+  Works by scaling down the item sprites, so it only works for vanilla items, so place mods that add items after this one (otherwise they will be scaled down while still using full sprites, causing issues).  
+  Affects all items bigger than two slots and, in addition, belts (to keep the gear scale more consistent).  
+  The main drawback is **it reduces the max amount of sockets**, so don't use it if that's a deal breaker or use it only for the miscellaneous items.
 
   ![demo.jpg](./SmallerGridItems/_meta/demo.jpg)
 
-- ### [UI Fixes](./UIFixes/readme.md)
+- ### [UI Fixes](./UIFixes)
 
   Fixes the placement of a few item grids.
   Currently fixes:
 
   - (Vanilla) vendor panel layout
   - (Mod) Expanded Stash (16x13)
+
+  Make sure the mod is loaded after the mods it fixes.
 
   ![demo.png](./UIFixes/_meta/demo.png)
