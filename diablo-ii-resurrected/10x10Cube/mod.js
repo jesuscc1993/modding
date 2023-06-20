@@ -1,3 +1,4 @@
+/* common */
 const inventoryFilename = 'global\\excel\\inventory.txt';
 const inventory = D2RMM.readTsv(inventoryFilename);
 inventory.rows.forEach((row) => {
@@ -11,18 +12,11 @@ inventory.rows.forEach((row) => {
 });
 D2RMM.writeTsv(inventoryFilename, inventory);
 
-const profileHDFilename = 'global\\ui\\layouts\\_profilehd.json';
-const profileHD = D2RMM.readJson(profileHDFilename);
-D2RMM.writeJson(profileHDFilename, profileHD);
-
-const profileLVFilename = 'global\\ui\\layouts\\_profilelv.json';
-const profileLV = D2RMM.readJson(profileLVFilename);
-D2RMM.writeJson(profileLVFilename, profileLV);
-
+/* mouse */
 const horadricCubeLayoutHDFilename =
   'global\\ui\\layouts\\horadriccubelayouthd.json';
-const horadricCubeHDLayout = D2RMM.readJson(horadricCubeLayoutHDFilename);
-horadricCubeHDLayout.children.forEach((child) => {
+const vendorPanelLayoutHD = D2RMM.readJson(horadricCubeLayoutHDFilename);
+vendorPanelLayoutHD.children.forEach((child) => {
   if (child.name === 'grid') {
     child.fields.cellCount.x = 10;
     child.fields.cellCount.y = 10;
@@ -37,14 +31,15 @@ horadricCubeHDLayout.children.forEach((child) => {
     child.fields.filename = 'PANEL\\Horadric_Cube\\HoradricCube_BG_Expanded';
   }
 });
-D2RMM.writeJson(horadricCubeLayoutHDFilename, horadricCubeHDLayout);
+D2RMM.writeJson(horadricCubeLayoutHDFilename, vendorPanelLayoutHD);
 
-const controllerHoradricCubeHDLayoutFilename =
+/* keyboard */
+const controllerHoradricCubeLayoutHDFilename =
   'global\\ui\\layouts\\controller\\horadriccubelayouthd.json';
-const controllerHoradricCubeHDLayout = D2RMM.readJson(
-  controllerHoradricCubeHDLayoutFilename
+const controllerHoradricCubeLayoutHD = D2RMM.readJson(
+  controllerHoradricCubeLayoutHDFilename
 );
-controllerHoradricCubeHDLayout.children.forEach((child) => {
+controllerHoradricCubeLayoutHD.children.forEach((child) => {
   if (child.name === 'grid') {
     child.fields.rect.x = 160;
     child.fields.rect.y = 217;
@@ -59,8 +54,8 @@ controllerHoradricCubeHDLayout.children.forEach((child) => {
   }
 });
 D2RMM.writeJson(
-  controllerHoradricCubeHDLayoutFilename,
-  controllerHoradricCubeHDLayout
+  controllerHoradricCubeLayoutHDFilename,
+  controllerHoradricCubeLayoutHD
 );
 
 D2RMM.copyFile(

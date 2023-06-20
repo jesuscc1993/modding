@@ -45,3 +45,13 @@
   Affects the maximum amount of sockets they can have.
 
   ![demo.jpg](./SmallerGridItems/_meta/demo.jpg)
+
+- ### [UI Fixes](./UIFixes/readme.md)
+
+  Fixes the placement of a few item grids.
+  Currently fixes:
+
+  - (Vanilla) vendor panel layout
+  - (Mod) Expanded Stash (16x13)
+
+  ![demo.png](./UIFixes/_meta/demo.png)
