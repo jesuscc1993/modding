@@ -1,18 +1,10 @@
 {
-  "name": "SmallerItems",
-  "description": "Scales down the space items take in the inventory by a configurable scale factor.",
+  "name": "Smaller Items",
+  "description": "Scales down the space items take in the inventory to a maximum of two slots. Affects the maximum amount of sockets they can have.",
   "author": "MetalTxus",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/???",
   "version": "1.0.0",
   "config": [
-    {
-      "id": "scale",
-      "type": "number",
-      "name": "Scale",
-      "defaultValue": 0.4,
-      "maxValue": 1,
-      "minValue": 0.2
-    },
     {
       "id": "armor",
       "type": "checkbox",
