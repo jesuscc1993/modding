@@ -39,8 +39,9 @@
   Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops.
   Does not affect fixed loot, such as sparkling chests or boses.
 
-- ### (WIP) [Smaller Items](./SmallerItems)
+- ### [Smaller Grid Items](./SmallerGridItems/readme.md)
 
-  **_\* DO NOT USE \*_**  
-  Scales down the space items take in the inventory by a configurable scale factor.  
-  Sadly, sprites are **_not_** scaled down and I could not figure out how to fix that.
+  Scales down the space items take in the inventory to a maximum of two slots.  
+  Affects the maximum amount of sockets they can have.
+
+  ![demo.jpg](./SmallerGridItems/_meta/demo.jpg)
