@@ -43,7 +43,7 @@
 
   Scales down the space items take in the inventory to a maximum of two slots.  
   Has separate toggles for weapons, armor and miscellanous items. Mix as you please.  
-  Works by scaling down the item sprites, so it only works for vanilla items, so place mods that add items after this one (otherwise they will be scaled down while still using full sprites, causing issues).  
+  Works by scaling down the item sprites, so it only works for vanilla item sprites, so place mods that add item sprites after this one (otherwise the items will take less grid space while still using full sprites, causing issues).
   Affects all items bigger than two slots and, in addition, belts (to keep the gear scale more consistent).  
   The main drawback is **it reduces the max amount of sockets**, so don't use it if that's a deal breaker or use it only for the miscellaneous items.
 
