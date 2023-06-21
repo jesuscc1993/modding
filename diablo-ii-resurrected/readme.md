@@ -45,7 +45,8 @@
   Has separate toggles for weapons, armor and miscellanous items. Mix as you please.  
   Works by scaling down the item sprites, so it only works for vanilla item sprites, so place mods that add item sprites after this one (otherwise the items will take less grid space while still using full sprites, causing issues).  
   Affects all items bigger than two slots and, in addition, belts (to keep the gear scale more consistent).  
-  The main drawback is <span style="color:#f64f2e">**it permanently reduces the max amount of sockets for existing and new items**</span> (until mods is disabled), so don't use it if that's a deal breaker or use it only for the miscellaneous items.
+  The main drawback is <span style="color:#f64f2e">**it permanently reduces the max amount of sockets for existing and new items**</span> (until mods is disabled).  
+  If you care about socketed items, you should toggle off the "armor" and "weapons" checkboxes to use it only for miscellaneous items or, instead, not use the mod.  
 
 ![demo.jpg](./SmallerGridItems/_meta/demo.jpg)
 
