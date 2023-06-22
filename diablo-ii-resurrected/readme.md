@@ -46,9 +46,13 @@
   Works by scaling down the item sprites, so it only works for vanilla item sprites, so place mods that add item sprites after this one (otherwise the items will take less grid space while still using full sprites, causing issues).  
   Affects all items bigger than two slots and, in addition, belts (to keep the gear scale more consistent).  
   The main drawback is <span style="color:#f64f2e">**it permanently reduces the max amount of sockets for existing and new items**</span> (until mods is disabled).  
-  If you care about socketed items, you should toggle off the "armor" and "weapons" checkboxes to use it only for miscellaneous items or, instead, not use the mod.  
+  If you care about socketed items, you should toggle off the "armor" and "weapons" checkboxes to use it only for miscellaneous items or, instead, not use the mod.
 
 ![demo.jpg](./SmallerGridItems/_meta/demo.jpg)
+
+- Before you disable the mod, make sure the items have enough room to grow back into their original size. Otherwise, overlapped items will be lost.
+
+![disabling.jpg](./SmallerGridItems/_meta/disabling.jpg)
 
 - ### [UI Fixes](./UIFixes)
 
