@@ -14,20 +14,26 @@ const processTable = (filename) => {
   const contents = D2RMM.readTsv(filename);
   contents.rows.forEach((row) => {
     if (shouldScaleItem(row)) {
-      let w = Math.ceil(row.invwidth * scale);
-      let h = Math.ceil(row.invheight * scale);
+      const { gemsockets, invheight, invwidth } = row;
+      let h = Math.ceil(invheight * scale);
+      let w = Math.ceil(invwidth * scale);
       let maxSockets = w * h;
 
-      if (config.keepSockets && maxSockets < row.gemsockets) {
-        w = Math.ceil(row.gemsockets / 3);
-        h = row.gemsockets < 4 ? row.gemsockets : Math.ceil(row.gemsockets / 2);
+      if (config.keepSockets && maxSockets < gemsockets) {
+        /* preserve aspect ratio for square items */
+        if (h === 1 && w === 1 && gemsockets > 2 && gemsockets < 5) {
+          h = 2;
+          w = 2;
+        } else {
+          h = gemsockets < 4 ? gemsockets : Math.ceil(gemsockets / 2);
+          w = Math.ceil(gemsockets / 3);
+        }
       } else {
-        row.gemsockets =
-          row.gemsockets > maxSockets ? maxSockets : row.gemsockets;
+        row.gemsockets = gemsockets > maxSockets ? maxSockets : gemsockets;
       }
 
-      row.invwidth = w;
       row.invheight = h;
+      row.invwidth = w;
     }
   });
   D2RMM.writeTsv(filename, contents);
