@@ -3,31 +3,141 @@
   "description": "Scales down the space items take in the inventory to a maximum of two slots. Affects the maximum amount of sockets they can have.",
   "author": "MetalTxus",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/386",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "config": [
     {
-      "id": "armor",
+      "id": "keepSockets",
       "type": "checkbox",
-      "name": "Armor",
+      "name": "Keep sockets",
+      "description": "Items with chance of a socket will take more space.",
       "defaultValue": true
     },
     {
-      "id": "weapons",
+      "id": "belt",
       "type": "checkbox",
-      "name": "Weapons",
+      "name": "Belts",
+      "defaultValue": true
+    },
+    {
+      "id": "boot",
+      "type": "checkbox",
+      "name": "Boots",
+      "defaultValue": true
+    },
+    {
+      "id": "glove",
+      "type": "checkbox",
+      "name": "Gloves",
+      "defaultValue": true
+    },
+    {
+      "id": "helmet",
+      "type": "checkbox",
+      "name": "Head Armor",
+      "description": "Circlets, helmets and hats.",
+      "defaultValue": true
+    },
+    {
+      "id": "shield",
+      "type": "checkbox",
+      "name": "Off-hand",
+      "description": "Shields and voodoo heads.",
+      "defaultValue": true
+    },
+    {
+      "id": "torso",
+      "type": "checkbox",
+      "name": "Torso Armor",
+      "defaultValue": true
+    },
+    {
+      "id": "axe",
+      "type": "checkbox",
+      "name": "Axes",
+      "defaultValue": true
+    },
+    {
+      "id": "bow",
+      "type": "checkbox",
+      "name": "Bows",
+      "defaultValue": true
+    },
+    {
+      "id": "club",
+      "type": "checkbox",
+      "name": "Clubs",
+      "defaultValue": true
+    },
+    {
+      "id": "hammer",
+      "type": "checkbox",
+      "name": "Hammers",
+      "defaultValue": true
+    },
+    {
+      "id": "javelin",
+      "type": "checkbox",
+      "name": "Javelins",
+      "defaultValue": true
+    },
+    {
+      "id": "katar",
+      "type": "checkbox",
+      "name": "Katars",
+      "defaultValue": true
+    },
+    {
+      "id": "knife",
+      "type": "checkbox",
+      "name": "Knives",
+      "defaultValue": true
+    },
+    {
+      "id": "mace",
+      "type": "checkbox",
+      "name": "Maces",
+      "defaultValue": true
+    },
+    {
+      "id": "orb",
+      "type": "checkbox",
+      "name": "Orbs",
+      "defaultValue": true
+    },
+    {
+      "id": "polearm",
+      "type": "checkbox",
+      "name": "Polearms",
+      "defaultValue": true
+    },
+    {
+      "id": "scepter",
+      "type": "checkbox",
+      "name": "Scepters",
+      "defaultValue": true
+    },
+    {
+      "id": "spear",
+      "type": "checkbox",
+      "name": "Spears",
+      "defaultValue": true
+    },
+    {
+      "id": "staff",
+      "type": "checkbox",
+      "name": "Staves",
+      "defaultValue": true
+    },
+    {
+      "id": "sword",
+      "type": "checkbox",
+      "name": "Swords",
       "defaultValue": true
     },
     {
       "id": "misc",
       "type": "checkbox",
       "name": "Everything else",
-      "defaultValue": true
-    },
-    {
-      "id": "keepSockets",
-      "type": "checkbox",
-      "name": "Keep sockets",
-      "description": "Items with chance of a socket will take more space.",
       "defaultValue": true
     }
   ]
