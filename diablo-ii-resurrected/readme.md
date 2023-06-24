@@ -52,7 +52,7 @@
 
 - Before you disable the mod, make sure the items have enough room to grow back into their original size. Otherwise, overlapped items will be lost.
 
-![disabling.jpg](./SmallerGridItems/_meta/disabling.jpg)
+![disabling.png](./SmallerGridItems/_meta/disabling.png)
 
 - ### [UI Fixes](./UIFixes)
 
