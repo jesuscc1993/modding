@@ -36,7 +36,7 @@
 
 - ### [Invisible UI Frames](./InvisibleUIFrames)
 
-  Hides the frames around UI windows. "Large Font Mmode" compatible.
+  Hides the frames around UI windows. "Large Font Mode" compatible.
 
   ![hd_stash.jpg](./InvisibleUIFrames/_meta/hd_stash.jpg)
 
