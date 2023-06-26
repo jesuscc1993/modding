@@ -34,6 +34,12 @@
 
   ![demo.jpg](./InvisibleHelmets/_meta/demo.jpg)
 
+- ### [Invisible UI Frames](./InvisibleUIFrames)
+
+  Hides the frames around UI windows. "Large Font Mmode" compatible.
+
+  ![hd_stash.jpg](./InvisibleUIFrames/_meta/hd_stash.jpg)
+
 - ### [Selectively Disable Potion Drops](./SelectivelyDisablePotionDrops)
 
   Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops.
