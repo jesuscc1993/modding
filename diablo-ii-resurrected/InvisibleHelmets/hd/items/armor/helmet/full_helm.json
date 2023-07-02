@@ -63,7 +63,7 @@
         {
           "defaultLayerChange": {
             "layersToHide": 32,
-            "layersToShow": 128,
+            "layersToShow": 64,
             "name": "entity_root_ChangeMeshLayersOnAttach_defaultLayerChange",
             "type": "MeshLayerChange"
           },

@@ -1,5 +1,10 @@
-D2RMM.copyFile(
-  'hd', // <mod folder>\hd
-  'hd', // <diablo 2 folder>\mods\<modname>\<modname>.mpq\data\hd
-  true // overwrite any conflicts
-);
+if (config.circlets) {
+  D2RMM.copyFile(
+    'hd\\items\\armor\\circlet',
+    'hd\\items\\armor\\circlet',
+    true
+  );
+}
+if (config.helmets) {
+  D2RMM.copyFile('hd\\items\\armor\\helmet', 'hd\\items\\armor\\helmet', true);
+}

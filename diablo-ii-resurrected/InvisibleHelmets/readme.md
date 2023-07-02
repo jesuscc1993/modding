@@ -74,6 +74,14 @@ To replicate, prettify the JSON files and run the following regex replace:
           },
 ```
 
+You should also run the following replacement to fix partial baldness:
+
+`            "layersToShow": 128,`
+
+```
+            "layersToShow": 64,
+```
+
 Optionally, you can also run this second replace to remove unnecessary data:
 
 `          "playerClassOverrides": \{\n(.|\n)*?\n          \},`

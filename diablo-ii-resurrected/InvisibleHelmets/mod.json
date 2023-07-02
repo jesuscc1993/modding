@@ -3,5 +3,21 @@
   "description": "Turns helmets invisble by scaling them down to 0. Only works on playable characters.",
   "author": "MetalTxus",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/382",
-  "version": "1.0.0"
+  "version": "1.0.1",
+  "config": [
+    {
+      "id": "circlets",
+      "type": "checkbox",
+      "name": "Circlets",
+      "description": "Hide circlets.",
+      "defaultValue": true
+    },
+    {
+      "id": "helmets",
+      "type": "checkbox",
+      "name": "Helmets",
+      "description": "Hide helmets.",
+      "defaultValue": true
+    }
+  ]
 }
