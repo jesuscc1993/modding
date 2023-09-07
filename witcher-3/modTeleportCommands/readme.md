@@ -16,6 +16,18 @@ Adds a few teleport commands; for convenience.
 - `restorePosition()` / `restorePos()`  
   Teleports you to the last saved player position.
 
+- `teleportFrontward( distance : float )` / `tpFront( distance : float )`  
+  Teleports you forward by the specified distance.
+
+- `teleportBackward( distance : float )` / `tpBack( distance : float )`  
+  Teleports you backward by the specified distance.
+
+- `teleportUp( distance : float )` / `tpUp( distance : float )`  
+  Teleports you up by the specified distance.
+
+- `teleportDown( distance : float )` / `tpDown( distance : float )`  
+  Teleports you down by the specified distance.
+
 - `undoTeleport()` / `undoTp()`  
   Teleports you to the player position previous to the latest teleportation.
 
