@@ -1,6 +1,6 @@
 ## Description:
 
-Adds a few teleport commands; for convenience.
+Adds a few teleport commands; for convenience. Do **NOT** use between regions, as the teleportation only works within the current one.
 
 ## Features:
 
