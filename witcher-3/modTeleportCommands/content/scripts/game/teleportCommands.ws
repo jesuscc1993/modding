@@ -42,37 +42,45 @@ function _goToRoach() {
   }
 }
 
-function _savePosition() {
+function _saveNamedPosition( positionName: String ) {
   var currentPosition : Vector;
   var currentRotation: EulerAngles;
 
   currentPosition = thePlayer.GetWorldPosition();
   currentRotation = thePlayer.GetWorldRotation();
 
-  FactsSet( "savedPositionX", (int) currentPosition.X );
-  FactsSet( "savedPositionY", (int) currentPosition.Y );
-  FactsSet( "savedPositionZ", (int) currentPosition.Z );
+  FactsSet( "savedPosition_" + positionName + "_X", (int) currentPosition.X );
+  FactsSet( "savedPosition_" + positionName + "_Y", (int) currentPosition.Y );
+  FactsSet( "savedPosition_" + positionName + "_Z", (int) currentPosition.Z );
 
-  FactsSet( "savedRotationYaw", (int) currentRotation.Yaw );
+  FactsSet( "savedRotation_" + positionName + "_Yaw", (int) currentRotation.Yaw );
 
-  GetWitcherPlayer().DisplayHudMessage( "Saved current position." );
+  GetWitcherPlayer().DisplayHudMessage( "Saved " + positionName + " position." );
 }
 
-function _restorePosition() {
+function _savePosition() {
+  _saveNamedPosition( "current" );
+}
+
+function _restoreNamedPosition( positionName: String ) {
   var newPosition : Vector;
   var newRotation : EulerAngles;
 
   __savePreviousPosition();
 
   newPosition = Vector( 
-    FactsQuerySum( "savedPositionX" ),
-    FactsQuerySum( "savedPositionY" ),
-    FactsQuerySum( "savedPositionZ" )
+    FactsQuerySum( "savedPosition_" + positionName + "_X" ),
+    FactsQuerySum( "savedPosition_" + positionName + "_Y" ),
+    FactsQuerySum( "savedPosition_" + positionName + "_Z" ) + 1 // +1 to avoid "kneeling" bug
  );
 
-  newRotation = EulerAngles( 0.f, FactsQuerySum( "savedRotationYaw" ), 0.f );
+  newRotation = EulerAngles( 0.f, FactsQuerySum( "savedRotation_" + positionName + "_Yaw" ), 0.f );
 
   __teleportWithRotation( newPosition, newRotation );
+}
+
+function _restorePosition() {
+  _restoreNamedPosition( "current" );
 }
 
 function _undoTeleport() {
@@ -160,8 +168,12 @@ function __savePreviousPosition() {
 
 exec function bringRoach() { _bringRoach(); }
 exec function goToRoach() { _goToRoach(); }
+exec function saveNamedPosition( positionName: String ) { _saveNamedPosition( positionName ); }
+exec function saveNamedPos( positionName: String ) { _saveNamedPosition( positionName ); }
 exec function savePosition() { _savePosition(); }
 exec function savePos() { _savePosition(); }
+exec function restoreNamedPosition( positionName: String ) { _restoreNamedPosition( positionName ); }
+exec function restoreNamedPos( positionName: String ) { _restoreNamedPosition( positionName ); }
 exec function restorePosition() { _restorePosition(); }
 exec function restorePos() { _restorePosition(); }
 exec function undoTeleport() { _undoTeleport(); }

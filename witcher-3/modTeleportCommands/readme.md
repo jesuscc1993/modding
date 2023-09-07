@@ -11,31 +11,66 @@ Adds a few teleport commands; for convenience.
 ## List of commands:
 
 - `savePosition()` / `savePos()`  
-  Saves your current player position.
+   Saves your current position.
+
+  > Usage: `savePosition`
+
+- `saveNamedPosition( positionName: String )`  
+  `saveNamedPos( positionName: String )`  
+   Saves a position with a given name.
+
+  > Usage: `saveNamedPosition("market")`
 
 - `restorePosition()` / `restorePos()`  
-  Teleports you to the last saved player position.
+   Teleports you to the last saved unnamed position.
 
-- `teleportFrontward( distance : float )` / `tpFront( distance : float )`  
-  Teleports you forward by the specified distance.
+  > Usage: `restorePosition`
 
-- `teleportBackward( distance : float )` / `tpBack( distance : float )`  
-  Teleports you backward by the specified distance.
+- `restoreNamedPosition( positionName: String )`  
+  `restoreNamedPos( positionName: String )`  
+   Teleports you to the saved position with the given name.
 
-- `teleportUp( distance : float )` / `tpUp( distance : float )`  
-  Teleports you up by the specified distance.
+  > Usage: `restoreNamedPosition("market")`
 
-- `teleportDown( distance : float )` / `tpDown( distance : float )`  
-  Teleports you down by the specified distance.
+- `teleportFrontward( distance : float )`  
+  `tpFront( distance : float )`  
+   Teleports you forward by the specified distance.
 
-- `undoTeleport()` / `undoTp()`  
-  Teleports you to the player position previous to the latest teleportation.
+  > Usage: `teleportFrontward(5)`
+
+- `teleportBackward( distance : float )`  
+  `tpBack( distance : float )`  
+   Teleports you backward by the specified distance.
+
+  > Usage: `teleportBackward(5)`
+
+- `teleportUp( distance : float )`  
+  `tpUp( distance : float )`  
+   Teleports you up by the specified distance.
+
+  > Usage: `teleportUp(5)`
+
+- `teleportDown( distance : float )`  
+  `tpDown( distance : float )`  
+   Teleports you down by the specified distance.
+
+  > Usage: `teleportDown(5)`
+
+- `undoTeleport()`  
+  `undoTp()`  
+   Teleports you to the player position previous to the latest teleportation.
+
+  > Usage: `undoTeleport`
 
 - `bringRoach()`  
-  Teleports Roach wherever you are.
+   Teleports Roach wherever you are.
+
+  > Usage: `bringRoach`
 
 - `goToRoach()`  
-  Teleports you to wherever Roach is.
+   Teleports you to wherever Roach is.
+
+  > Usage: `goToRoach`
 
 ## Installation:
 
