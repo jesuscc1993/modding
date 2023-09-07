@@ -5,7 +5,7 @@ Adds a few teleport commands; for convenience.
 ## Features:
 
 - Locations are stored in the game save, so they persist between game sessions.
-- **(NEW)** Named locations can be saved, allowing for storing more than one place.
+- **(NEW)** Named locations can be saved, allowing for several to be saved.
 - **(NEW)** Allows teleportation frontward / backward / upward / downward; useful when stuck.
 - A message is shown when a player location is saved, to indicate success.
 - A load screen is shown during load after teleportation.
