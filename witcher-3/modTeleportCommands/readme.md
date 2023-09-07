@@ -13,7 +13,8 @@ Do **NOT** use between regions, as teleporting to the same coordinates on differ
 
 ## List of commands:
 
-- `savePosition()` / `savePos()`  
+- `savePosition()`  
+  `savePos()`  
    Saves your current position.
 
   > Usage: `savePosition`
