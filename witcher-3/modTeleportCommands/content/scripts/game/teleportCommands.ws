@@ -98,24 +98,32 @@ function _undoTeleport() {
   __teleportWithRotation( newPosition, newRotation );
 }
 
-function _teleportFrontward( distance : float ) {
+function _teleportFrontward( optional distance : float ) {
   var heading : Vector = VecFromHeading( thePlayer.GetHeading() );
   var position : Vector = thePlayer.GetWorldPosition();
+
+	if ( distance == 0.0f ) distance = 5.0f;
 
   __teleport( position + heading * distance );
 }
 
-function _teleportBackward( distance : float ) {
+function _teleportBackward( optional distance : float ) {
+	if ( distance == 0.0f ) distance = 5.0f;
+
   _teleportFrontward( distance * -1 );
 }
 
-function _teleportUp( distance : float ) {
+function _teleportUp( optional distance : float ) {
   var position : Vector = thePlayer.GetWorldPosition();
+
+	if ( distance == 0.0f ) distance = 10.0f;
 
   __teleport( Vector( position.X, position.Y, position.Z + distance, 1 ) );
 }
 
-function _teleportDown( distance : float ) {
+function _teleportDown( optional distance : float ) {
+	if ( distance == 0.0f ) distance = 10.0f;
+
   _teleportUp( distance * -1 );
 }
 
@@ -179,11 +187,11 @@ exec function restorePos() { _restorePosition(); }
 exec function undoTeleport() { _undoTeleport(); }
 exec function undoTp() { _undoTeleport(); }
 
-exec function teleportBackward( distance : float ) { _teleportBackward( distance ); }
-exec function teleportDown( distance : float ) { _teleportDown( distance ); }
-exec function teleportFrontward( distance : float ) { _teleportFrontward( distance ); }
-exec function teleportUp( distance : float ) { _teleportUp( distance ); }
-exec function tpBack( distance : float ) { _teleportBackward( distance ); }
-exec function tpDown( distance : float ) { _teleportDown( distance ); }
-exec function tpFront( distance : float ) { _teleportFrontward( distance ); }
-exec function tpUp( distance : float ) { _teleportUp( distance ); }
+exec function teleportBackward( optional distance : float ) { _teleportBackward( distance ); }
+exec function teleportDown( optional distance : float ) { _teleportDown( distance ); }
+exec function teleportFrontward( optional distance : float ) { _teleportFrontward( distance ); }
+exec function teleportUp( optional distance : float ) { _teleportUp( distance ); }
+exec function tpBack( optional distance : float ) { _teleportBackward( distance ); }
+exec function tpDown( optional distance : float ) { _teleportDown( distance ); }
+exec function tpFront( optional distance : float ) { _teleportFrontward( distance ); }
+exec function tpUp( optional distance : float ) { _teleportUp( distance ); }
