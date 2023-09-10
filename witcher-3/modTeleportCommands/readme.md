@@ -40,25 +40,25 @@ Do **NOT** use between regions, as teleporting to the same coordinates on differ
   `tpFront( distance : float )`  
    Teleports you forward by the specified distance.
 
-  > Usage: `teleportFrontward(5)`
+  > Usage: `teleportFrontward` / `teleportFrontward(5)`
 
 - `teleportBackward( distance : float )`  
   `tpBack( distance : float )`  
    Teleports you backward by the specified distance.
 
-  > Usage: `teleportBackward(5)`
+  > Usage: `teleportBackward` / `teleportBackward(5)`
 
 - `teleportUp( distance : float )`  
   `tpUp( distance : float )`  
    Teleports you up by the specified distance.
 
-  > Usage: `teleportUp(5)`
+  > Usage: `teleportUp` / `teleportUp(10)`
 
 - `teleportDown( distance : float )`  
   `tpDown( distance : float )`  
    Teleports you down by the specified distance.
 
-  > Usage: `teleportDown(5)`
+  > Usage: `teleportDown` / `teleportDown(10)`
 
 - `undoTeleport()`  
   `undoTp()`  
