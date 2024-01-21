@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate_tile_slab"
+    }
+  },
+  "pattern": ["#", "#"],
+  "result": {
+    "item": "minecraft:deepslate_tiles"
+  }
+}
