@@ -1,0 +1,37 @@
+[center][size=6][color=#3080c0]Custom [/color][/size][color=#3080c0][size=6]Resolution [/size][/color][color=#3080c0][size=6]Trickster [/size][/color][color=#3080c0][size=6]Launcher v2.0[/size][/color][/center]
+[center] [/center]
+[center][img=https://dl.dropbox.com/s/5y2b5s1g239o1kz/launcher.png][/center]
+ 
+ 
+ Some time ago I took a look at [i]Cait's Guide to Custom Screen Resolutions and Chat Bars[/i] and since I thought it would be annoying to have to repeat all steps every time I developed this small app which allows to specify any game resolution in just a few seconds. What it does behind the scenes is simply modify the registry values you would otherwise change by hand. After the new resolution is set you can either launch the game from this launcher or use the default one*.
+ 
+[color=#808080][size=3]*From time to time, for no apparent reason, the game crashes with the message "Access Violation" when run from my launcher and there is nothing I have been able to do to fix it.[/size][/color]
+
+
+[color=#3080c0][size=5]Screenshots:[/size][/color]
+
+Default 1024x728 resolution on a 1280x728 screen (image just stretches)
+[spoiler][img=https://dl.dropbox.com/s/8xydbsc0enjw7fk/1024x768.PNG][/spoiler]
+Custom 1280x728 resolution
+[spoiler][img=https://dl.dropbox.com/s/st3c3wwh24ihq9g/1280x768.PNG][/spoiler]
+Custom 1360x728 resolution + custom chat width of 544px
+[spoiler][img=https://dl.dropbox.com/s/d0n8e419vcknvuc/1360x768.png][/spoiler]
+Custom 1920x1080 resolution (just for showing off)
+[spoiler][img=https://dl.dropbox.com/s/11gfdpze81p3no7/1920x1080.png][/spoiler]
+Custom 640x480 resolution + windowed mode
+[spoiler][img=https://dl.dropbox.com/s/l1q0c2yy7zs9aj1/640x480.PNG][/spoiler]
+
+
+[color=#3080c0][size=5]Download:[/size][/color]
+ [url=https://dl.dropbox.com/s/p7cmqhteebl1vks/Trickster%20Launcher.zip]Dropbox link[/url]
+
+
+[color=#3080c0][size=5]How to use:[/size][/color]
+ Copy "Launcher.jar" it to your Trickster installation folder and execute as administrator (requires to have Java installed).
+
+ Remember; if you experience any "Access Violation" crash, just switch to the default launcher after saving your changes with this one.
+
+
+[color=#3080c0][size=5]Notes:[/size][/color]
+ Many UI elements will overlap on resolutions lower than native (1024x768).
+ Some interfaces will look weird / glitched as well, given they weren't thought to be used for different resolutions (take card reading as an example).
