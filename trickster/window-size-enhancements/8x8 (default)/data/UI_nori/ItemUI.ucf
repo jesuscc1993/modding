@@ -1,0 +1,14 @@
+iViewCoordX     = 200
+iViewCoordY     = 200
+iViewDimX       = 244
+iViewDimY       = 178
+iViewMinDimX    = 208
+iViewMinDimY    = 106
+iViewMaxDimX    = 316
+iViewMaxDimY    = 358
+iGridItemSizeX  = 36
+iGridItemSizeY  = 36
+iGridSizeX      = 8
+iGridSizeY      = 8
+iGridMinSizeX   = 5
+iGridMinSizeY   = 1

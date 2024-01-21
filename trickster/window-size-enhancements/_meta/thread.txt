@@ -1,0 +1,23 @@
+[center][size=6][color=#3080c0]Window Size Enhancements[/color][/size][/center]
+
+
+[color=#3080c0][size=5]Description:[/size][/color]
+ Downloadable reconfigured settings files for item and cards window displaying.
+Check the attached screenshot for more details.
+
+
+[color=#3080c0][size=5]Screenshot:[/size][/color]
+ (Better and faster to see it in action than to read the description)
+[spoiler][img=https://dl.dropboxusercontent.com/s/w1a3id87imszopf/Window%20Size%20Enhancements.png][/spoiler]
+
+[color=#3080c0][size=5]Download:[/size][/color]
+ [url=https://dl.dropbox.com/s/w820rxl9usxpetc/Trickster%20-%20Window%20Size%20Enhancements.zip]Dropbox link[/url]
+
+
+[color=#3080c0][size=5]How to use:[/size][/color]
+ Extract ZIP contents to your Trickster installation folder. You will need to confirm the files overwriting.
+ Restart the game if it's already running for the changes to take effect.
+
+
+[color=#3080c0][size=5]Notes:[/size][/color]
+ There's the unfortunate need to do this after every update given the files get downloaded again then.
