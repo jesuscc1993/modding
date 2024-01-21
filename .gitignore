@@ -1,2 +1,5 @@
+**/out/production/
+*.iml
+.idea
 desktop.ini
 minecraft/fabric-example-mod/
