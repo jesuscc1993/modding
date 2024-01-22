@@ -1,7 +1,7 @@
 iViewCoordX     = 200
 iViewCoordY     = 200
-iViewDimX       = 316
-iViewDimY       = 178
+iViewDimX       = 460
+iViewDimY       = 250
 iViewMinDimX    = 280
 iViewMinDimY    = 106
 iViewMaxDimX    = 460
