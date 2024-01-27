@@ -38,27 +38,22 @@ game_paused = false
 game_speed = default_speed
 
 RegisterKeyBind(pause_key, function()
-	game_paused = not game_paused
 	UpdateGameSpeed()
 end)
 
 RegisterKeyBind(slowdown_key, function()
-  game_paused = false
 	UpdateGameSpeed(game_speed - speed_step)
 end)
 
 RegisterKeyBind(speedup_key, function()
-  game_paused = false
 	UpdateGameSpeed(game_speed + speed_step)
 end)
 
 RegisterKeyBind(turbo_key, function()
-  game_paused = false
 	UpdateGameSpeed(turbo_speed)
 end)
 
 RegisterKeyBind(reset_key, function()
-  game_paused = false
 	UpdateGameSpeed(default_speed)
 end)
 
@@ -67,7 +62,10 @@ function UpdateGameSpeed(new_speed)
 	local Player = FindFirstOf("PalPlayerCharacter")
 
 	if new_speed then
+    game_paused = false
     game_speed = new_speed
+	else
+    game_paused = not game_paused
 	end
 
 	if game_paused then
