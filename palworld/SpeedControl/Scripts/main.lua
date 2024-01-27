@@ -66,7 +66,9 @@ function UpdateGameSpeed(new_speed)
 	GameplayStatics = StaticFindObject("/Script/Engine.Default__GameplayStatics")
 	local Player = FindFirstOf("PalPlayerCharacter")
 
-	game_speed = new_speed
+	if new_speed then
+    game_speed = new_speed
+	end
 
 	if game_paused then
 		GameplayStatics:SetGlobalTimeDilation(Player, 0.0)
