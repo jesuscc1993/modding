@@ -15,8 +15,8 @@ Mod is safe to uninstall; the item counts will remain the same but you will not 
 
 ## TECHNICAL DETAILS
 
-Field `max` has been updated to `999` in file `PB_DT_ItemMaster.uasset` for the affected items.
-You can replace regex `"max",\s*"DuplicationIndex":\s*0,\s*"Value":\s*(\d+)` with `"max","DuplicationIndex":0,"Value":999` on the JSON file to achieve so.
+Field `max` has been updated to `999` in file `PB_DT_ItemMaster.uasset` for the affected items.  
+You can replace regex `"max",\s*"DuplicationIndex":\s*0,\s*"Value":\s*(\d+)` with `"max","DuplicationIndex":0,"Value":999` on the inline JSON file to achieve this.
 
 This mod will be incompatible with any other updating this same file.
 
