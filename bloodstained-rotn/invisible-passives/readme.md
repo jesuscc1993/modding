@@ -52,9 +52,10 @@ This mod will be incompatible with any other updating this same file.
 
 ## CREDITS
 
-Kudos to [ashtar01](https://www.nexusmods.com/bloodstainedritualofthenight/users/883766) for their ["Words of Wisdom / Healing / Regenerate Invisible"](https://www.nexusmods.com/bloodstainedritualofthenight/mods/96) mod, which this one was based on.
+Kudos to [ashtar01](https://www.nexusmods.com/bloodstainedritualofthenight/users/883766) for their ["Words of Wisdom / Healing / Regenerate Invisible"](https://www.nexusmods.com/bloodstainedritualofthenight/mods/96) mod, which this one was based on.  
 I used their mod as a base, reverting their removal of the effects for the healing shard in order to prevent a resulting bug that prevented it from working properly.
 
-Kudos to [wgnwaugvwh](https://www.nexusmods.com/bloodstainedritualofthenight/users/133051303) for their ["Detective Eye No Ring and Global"](https://www.nexusmods.com/bloodstainedritualofthenight/mods/196) mod, which I incorporated into mine. I kept my values smaller than theirs, just big enough to cover the screen. Hopefully this prevents issues with having a range too big.
+Kudos to [wgnwaugvwh](https://www.nexusmods.com/bloodstainedritualofthenight/users/133051303) for their ["Detective Eye No Ring and Global"](https://www.nexusmods.com/bloodstainedritualofthenight/mods/196) mod, which I incorporated into mine.  
+I kept my values smaller than theirs, just big enough to cover the screen. Hopefully this prevents issues with having a range too big.
 
 Thanks to [joneirik](https://www.nexusmods.com/bloodstainedritualofthenight/users/46391987) for their support with modding the game.
