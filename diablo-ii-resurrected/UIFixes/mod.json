@@ -3,5 +3,21 @@
   "description": "Fixes the placement of a few item grids.",
   "author": "MetalTxus",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/387",
-  "version": "1.0.0"
+  "version": "1.1.0",
+  "config": [
+    {
+      "id": "shouldFixVendorPanelLayoutHd",
+      "type": "checkbox",
+      "name": "Fix Vendor Panel Layout",
+      "description": "Fix the item grids in the vendor panel.",
+      "defaultValue": true
+    },
+    {
+      "id": "shouldFixBankExpansionLayoutHd",
+      "type": "checkbox",
+      "name": "Fix Expanded Stash (16x13) Mod Layout",
+      "description": "Fix the item grids in the Expanded Stash (16x13) mod by olegbl.",
+      "defaultValue": false
+    }
+  ]
 }
