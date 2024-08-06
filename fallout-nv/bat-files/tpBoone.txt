@@ -1,0 +1,2 @@
+prid 00096BCE
+moveto player

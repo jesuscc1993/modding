@@ -1,0 +1,1 @@
+"0010D8DF".moveto player

@@ -1,0 +1,1 @@
+set gamehour to 0
