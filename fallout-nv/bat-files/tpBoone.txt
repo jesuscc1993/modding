@@ -1,2 +1,1 @@
-prid 00096BCE
-moveto player
+"00096BCE".moveto player
