@@ -1,0 +1,412 @@
+﻿<template name="template_positioning_grid">
+	<image name="grid_point">
+		<visible>&true;</visible>
+		<width>4</width>
+		<height>4</height>
+	</image>
+</template>
+
+<!--<rect name="test_fonts">
+	<visible>&true;</visible>
+	<locus>&true;</locus>
+	<x><copy src="screen()" trait="cropx"/><mul>2</mul></x>
+	<y><copy src="screen()" trait="cropy"/><mul>2</mul></y>
+	<text name="font1">
+		<font>1</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+	</text>
+	<text name="font2">
+		<font>2</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font1" trait="y"/><add src="font1" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font3">
+		<font>3</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font2" trait="y"/><add src="font2" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font4">
+		<font>4</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font3" trait="y"/><add src="font3" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font5">
+		<font>5</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font4" trait="y"/><add src="font4" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font6">
+		<font>6</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font5" trait="y"/><add src="font5" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font7">
+		<font>7</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font6" trait="y"/><add src="font6" trait="height"/><add>5</add></y>
+	</text>
+	<text name="font8">
+		<font>8</font>
+		<string>The quick brown fox jumps over the lazy dog.!?	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.!?</string>
+		<y><copy src="font7" trait="y"/><add src="font7" trait="height"/><add>5</add></y>
+	</text>
+</rect>-->
+
+<template name="template_justify_right_text">
+	<text name="justify_right_text">
+		<justify>&right;</justify>
+		<font> 7 </font>
+		<x>0</x>
+		<y>0</y>
+	</text>
+</template>
+
+<template name="template_justify_left_text">
+	<text name="justify_left_text">
+		<justify>&left;</justify>
+		<font> 7 </font>
+		<wrapwidth>2048</wrapwidth>
+		<alpha>0</alpha>
+		<visible>&false;</visible>
+	</text>
+</template>
+
+<template name="template_justify_center_text">
+	<text name="justify_center_text">
+		<justify>&center;</justify>
+		<font> 7 </font>
+	</text>
+</template>
+
+<template name="template_right_bracket">
+	<image name="right_bracket">
+		<depth>-1</depth>
+		<visible>&true;</visible>
+		<width>512</width>
+		<height>256</height>
+		<filename>interface\HUD\glow_hud_right_seperatorglow.dds</filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+	</image>
+</template>
+
+<template name="template_weapon_icon">
+	<image name="weapon_icon">
+		<width>42</width>
+		<height>42</height>
+		<zoom>125</zoom>
+	</image>
+</template>
+
+<template name="template_meter">
+	<image name="meter">
+		<filename> Interface\HUD\hud_tick_mark.dds </filename>
+		<!--<visible> &true; </visible>-->
+		<tile> &true; </tile>
+		<height> 20 </height>
+		<width> 8 </width>
+		<_TotalWidth> 300 </_TotalWidth>
+		<_ImageWidth> 8 </_ImageWidth>
+		<_OriginalX> 0 </_OriginalX>
+		<justify> &left; </justify>
+	</image>
+</template>
+<template name="template_meter_background">
+	<image name="MeterBackground">
+		<depth>-1</depth>
+		<filename> solid.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<tile> &true; </tile>
+		<height> 20 </height>
+		<width> 60 </width>
+		<x>90</x>
+		<justify> &left; </justify>
+	</image>
+</template>
+
+<template name="template_left_bracket">
+	<image name="left_bracket">
+		<depth>-1</depth>
+		<width>512</width>
+		<height>256</height>
+		<filename>interface\HUD\glow_hud_left_seperatorglow.dds</filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+	</image>
+</template>
+
+<template name="template_enemy_health_bracket">
+	<image name="enemy_health_bracket">
+		<filename> Interface\HUD\glow_enemy_health_seperator.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<width> 500 </width>
+		<height> 64 </height>
+		<y>3</y>
+		<x>-7</x>
+	</image>
+</template>
+
+<template name="template_reticle_center">
+	<image name="reticle_center">
+		<user0>Interface\HUD\glow_crosshair.dds</user0>
+		<user1>Interface\HUD\glow_crosshair_filled.dds</user1>
+		<filename>Interface\HUD\glow_crosshair.dds</filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<width> 64 </width>
+		<height> 64 </height>
+		<x>2</x>
+		<y>9</y>
+	</image>
+</template>
+<!--<image name="center_test">
+	<visible>&true;</visible>
+	<width>50</width>
+	<height>50</height>
+	<alpha>255</alpha>
+	<x><copy src="screen()" trait="width"/><div>2</div></x>
+	<y><copy src="screen()" trait="height"/><div>2</div></y>
+</image>-->
+
+<template name="template_warning_background">
+	<rect name="warning_background">
+		<!--<systemcolor>&hudalt;</systemcolor>
+		<visible>&true;</visible>
+		<width>10</width>
+		<height>10</height>
+		<alpha>0</alpha>-->
+	</rect>
+</template>
+
+<template name="template_sneak_bracket">
+	<image name="sneak_bracket">
+		<depth>10</depth>
+		<filename> Interface\HUD\glow_stealth_metre_seperator.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<width> 356 </width>
+		<height> 34 </height>
+		<zoom>&scale;</zoom>
+	</image>
+</template>
+
+<template name="template_message_bracket">
+	<image name="message_bracket">
+		<filename> Interface\icons\MOOD\glow_messages_seperator_left.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<zoom> &scale; </zoom>
+		<y>-20</y>
+		<width>470</width>
+		<height>192</height>
+		<alpha> 0 </alpha>
+	</image>
+</template>
+
+<template name="template_message_icon">
+	<image name="message_icon">
+		<filename> Interface\Icons\Mood\glow_messages_happy.dds </filename>
+    <texatlas> Interface\InterfaceShared.tai </texatlas>
+    <x>-00</x>
+		<y>-25</y>
+    <depth>2</depth>
+    <zoom>&scale;</zoom>
+		<width> 160 </width>
+		<height> 160 </height>
+		<alpha> 0 </alpha>
+	</image>
+</template>
+
+<template name="template_line_base">
+	<image name="line_base">
+		<visible>&false;</visible>
+		<filename> Interface\Shared\solid.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<x>0</x>
+		<y>0</y>
+		<width>4</width>
+		<height>4</height>
+		<zoom> &scale; </zoom>
+	</image>
+</template>
+
+<template name="template_fade_left">
+	<image name="fade_left">
+		<visible>&false;</visible>
+		<filename> Interface\Shared\Line\fade_to_left.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<height> 4 </height>
+		<zoom> &scale; </zoom>
+	</image>
+</template>
+
+<template name="template_fade_down">
+	<image name="fade_down">
+		<visible>&false;</visible>
+		<filename> Interface\Shared\Line\fade_to_bottom.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<width> 4 </width>
+		<zoom> &scale; </zoom>
+	</image>
+</template>
+
+<template name="template_info_seperator">
+	<image name="info_seperator">
+		<filename> Interface\HUD\glow_hud_bottom_info_seperator_divider.dds </filename>
+		<texatlas> Interface\InterfaceShared.tai </texatlas>
+		<width>500</width>
+		<height>136</height>
+		<y>32</y>
+    <zoom>&scale;</zoom>
+		<visible>&false;</visible>
+	</image>
+</template>
+
+<template name="template_hotkey_selector">
+	<rect name="hotkey_selector">
+		<_IconFilename></_IconFilename>
+		<_IconVisible> &false; </_IconVisible>
+	
+		<visible>&false;</visible>
+		<include src="HotKeys.xml"/>
+		<width> 320 </width>
+		<height> 300 </height>
+		<locus> &true; </locus>
+		
+		<image name="hotkey_icon">
+			<filename> <copy src="parent()" trait="_IconFilename"/> </filename>
+			<x> 65 </x>
+			<y> 30 </y>
+			<width> 220 </width>
+			<height> 220 </height>
+			<zoom> &scale; </zoom>
+			<visible> <copy src="parent()" trait="_IconVisible"/> </visible>
+		</image>
+	</rect>
+</template>
+
+<template name="template_compass_window">
+	<image name="compass_window">
+		<filename> Interface\HUD\glow_hud_comp_direction_strip.dds </filename>
+    <!-- upscaled interfaceshared0.dds fix -->
+		<!-- <texatlas> Interface\InterfaceShared.tai </texatlas> -->
+		<locus> &true; </locus>
+		<width> 345 </width>
+		<height> 64 </height>
+    <depth>1</depth>
+		<visible>&true;</visible>
+		<zoom> 100 </zoom>
+		<x>20</x>
+		<y>65</y>
+	</image>
+</template>
+
+<template name="template_compass_icon_group">
+	<rect name="compass_icon_group">
+		<locus>&true;</locus>
+		<y>5</y>
+	</rect>
+</template>
+
+<template name="template_compass_icon">
+	<image name="compass_icon">
+		<depth>2</depth>
+		<locus>&true;</locus>
+		<include src="CompassIcon.xml"/>
+		<y>5</y>
+    <_AlphaDown>&false;</_AlphaDown>
+	</image>
+</template>
+
+<template name="template_compass_icon_quest">
+  <image name="compass_icon">
+    <depth>5</depth>
+    <locus>&true;</locus>
+    <include src="CompassIcon.xml"/>
+    <filename>Interface\HUD\glow_hud_compass_objective_marker.dds</filename>
+    <y>5</y>
+    <_AlphaDown>&false;</_AlphaDown>
+    <_Distance>1.0</_Distance>
+  </image>
+</template>
+
+<template name="template_compass_icon_player">
+  <image name="compass_icon">
+    <depth>4</depth>
+    <locus>&true;</locus>
+    <include src="CompassIcon.xml"/>
+	<filename>Interface\HUD\glow_hud_compass_pc_marker.dds</filename> 
+    <y>5</y>
+    <_AlphaDown>&false;</_AlphaDown>
+  </image>
+</template>
+
+<template name="template_compass_icon_marker">
+  <image name="compass_icon">
+    <depth>3</depth>
+    <locus>&true;</locus>
+    <include src="CompassIcon.xml"/>
+    <filename>Interface\HUD\glow_hud_compass_landmark.dds</filename>
+    <y>5</y>
+    <_AlphaDown>&false;</_AlphaDown>
+  </image>
+</template>
+
+<template name="template_compass_npc_icon_group">
+	<rect name="compass_npc_icon_group">
+    <depth>2</depth>
+		<locus>&true;</locus>
+		<y>5</y>
+	</rect>
+</template>
+
+<template name="compass_npc_icon">
+	<image name="compass_npc_icon">
+		<include src="CompassIcon.xml"/>
+		<depth>-10</depth>
+		<filename>Interface\HUD\glow_hud_tick_mark.dds</filename>
+		<zoom>&scale;</zoom>
+		<width>32</width>
+		<height>32</height>
+		<y>-10</y>
+    <_Distance>1.0</_Distance>
+  </image>
+</template>
+
+<template name="template_hit_direction_indicator">
+	<image name="hit_direction_indicator">
+		<depth>2</depth>
+		<systemcolor>&hudalt;</systemcolor>
+		<filename>Interface\HUD\HitGradientLeft.dds</filename>
+		<brightness>200</brightness>
+		<zoom>-1</zoom>
+		<x>10</x>
+		<y>10</y>
+		<width>30</width>
+		<height>180</height>
+		<visible>&true;</visible>
+		<alpha>0</alpha>
+	</image>
+</template>
+
+<template name="template_shaded_background">
+	<image name="shaded_background">
+		<filename>Interface\Shared\Background\solid_black.dds</filename>
+		<systemcolor>&nosystemcolor;</systemcolor>
+		<brightness>128</brightness>
+		<zoom>-1</zoom>
+		<alpha>140</alpha>
+		<depth>-1</depth>
+		<visible>&false;</visible>
+	</image>
+</template>
+
+<template name="template_explosive_indicator">
+	<image name="explosive_indicator">
+		<filename>Interface\HUD\explosive_indicator.dds</filename>
+		<systemcolor>&hudalt;</systemcolor>
+		<width>151</width>
+		<height>187</height>
+		<x>-75</x>
+		<y>-93</y>
+		<zoom>120</zoom>
+		<visible>&true;</visible>
+		<alpha>0</alpha>
+	</image>
+</template>
+
