@@ -13,7 +13,7 @@ treasureclassex.rows.forEach((row) => {
       if (config[`disablehp${tier}`] && itemDrop === `hp${tier}`) {
         row[item] = replacement;
       }
-      if (config[`disablemp${tier}`] && itemDrop === `^mp${tier}$`) {
+      if (config[`disablemp${tier}`] && itemDrop === `mp${tier}`) {
         row[item] = replacement;
       }
     }
