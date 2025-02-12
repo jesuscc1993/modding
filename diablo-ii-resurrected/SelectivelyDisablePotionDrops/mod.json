@@ -3,7 +3,7 @@
   "description": "Lets you disable drops of individual HP/MP/RV potions, by replacing them with gold drops. Does not affect fixed loot, such as sparkling chests or boses. Does not affect fixed loot, such as sparkling chests or boses.",
   "author": "MetalTxus",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/385",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "config": [
     {
       "id": "disablehp1",
