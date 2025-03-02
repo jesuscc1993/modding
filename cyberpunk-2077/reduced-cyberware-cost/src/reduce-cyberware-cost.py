@@ -22,7 +22,7 @@ def generate_list(multiplier):
 
   for cost in costs:
     new_cost = max(round(cost * multiplier / 100), 1)
-    new_tinkerer_cost = round(new_cost - cost)
+    new_tinkerer_cost = (cost - new_cost) * -1
 
     prefix = f"Variants.Humanity{cost}Cost_inline"
     base_costs[f"{prefix}1.value"] = new_cost
