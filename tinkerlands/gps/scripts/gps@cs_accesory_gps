@@ -1,0 +1,2 @@
+ID,Key,(!)Folder,Event,Code
+5001,gps@cs_accesory_gps,root,E_CS_EVENT.None,function cs_accesory_gps(_buffID=undefined#$#_params)\n{\n	// TODO\n	// MY_PLAYER.x#$#\n	// MY_PLAYER.y\n}\n
