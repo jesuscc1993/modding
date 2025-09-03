@@ -4,7 +4,7 @@
 
 | Mod                                   | Description                               |
 | ------------------------------------- | ----------------------------------------- |
-| [/powerful_drills](./powerful_drills) | Increases drill damage (10) and tier (24) |
+| [/powerful_drills](./powerful_drills) | Increases drill damage (10) and tier (50) |
 
 ## WIP
 
