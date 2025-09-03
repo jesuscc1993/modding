@@ -2,9 +2,10 @@
 
 ## Working
 
-| Mod                                   | Description                               |
-| ------------------------------------- | ----------------------------------------- |
-| [/powerful_drills](./powerful_drills) | Increases drill damage (10) and tier (50) |
+| Mod                                   | Description                                            |
+| ------------------------------------- | ------------------------------------------------------ |
+| [/powerful_drills](./powerful_drills) | Increases drill damage (10) and tier (50)              |
+| [/faster_shovel](./faster_shovel)     | Increases shovel speed (100), matching the other tools |
 
 ## WIP
 
