@@ -2,11 +2,11 @@
 
 ## Working
 
-| Mod                                           | Description                                            |
-| --------------------------------------------- | ------------------------------------------------------ |
-| [/extended_slime_suit](./extended_slime_suit) | Adds the eye of truth buff to the slime suit accessory |
-| [/faster_shovel](./faster_shovel)             | Increases shovel speed (100), matching the other tools |
-| [/powerful_drills](./powerful_drills)         | Increases drill damage (10) and tier (50)              |
+| Mod                                           | Description                                                              |
+| --------------------------------------------- | ------------------------------------------------------------------------ |
+| [/extended_slime_suit](./extended_slime_suit) | Adds the eye of truth + rainbow candle buffs to the slime suit accessory |
+| [/faster_shovel](./faster_shovel)             | Increases shovel speed (100), matching the other tools                   |
+| [/powerful_drills](./powerful_drills)         | Increases drill damage (10) and tier (50)                                |
 
 ## WIP
 
