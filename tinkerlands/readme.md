@@ -14,4 +14,4 @@
 | ----------------------------------------------------------------- | --------------------------------------------------------------- |
 | [/bigger_accessory_light_radius](./bigger_accessory_light_radius) | Would increase accessory light radius                           |
 | [/gps](./gps)                                                     | New accessory that would display the current player coordinates |
-| [/placeable_waypoints](./placeable_waypoints)                     | Would add a way to manually place waypoints                     |
+| [/obtainable_waypoints](./obtainable_waypoints)                   | Would add a way to manually place waypoints                     |
