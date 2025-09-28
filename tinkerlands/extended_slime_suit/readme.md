@@ -2,6 +2,12 @@
 
 Adds the [eye of truth](https://tinkerlands.fandom.com/wiki/Eye_Of_Truth) + [rainbow candle](https://tinkerlands.fandom.com/wiki/Rainbow_Candle) buffs to the slime suit accessory.
 
+## Download
+
+[extended_slime_suit_1.1.0.zip](https://github.com/jesuscc1993/modding/raw/refs/heads/master/tinkerlands/extended_slime_suit/__release__/extended_slime_suit_1.1.0.zip)
+
+## Description
+
 It wasn't that annoying to swap it in for bosses but now that banners are a thing it's more inconvenient, so I made this.
 
 It now also has a +1 light buff and a +2 light buff.\
