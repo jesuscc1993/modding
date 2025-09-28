@@ -1,0 +1,2 @@
+ID,Key,(!)Folder,Event,Code
+5002,quick_codex@quick_codex,undefined,E_CS_EVENT.None,OnModLoad(function() {\n    for (var i = 0; i < array_length(DB_MOB); i++) {\n        if (db_is_valid(DB_MOB#$# i#$# db_item) && DB_MOB[i][E_MOB_DATA.codex_unlockable] == 1) {\n            DB_MOB[i][E_MOB_DATA.codex_kills_required] = 1;\n        }\n    }\n});

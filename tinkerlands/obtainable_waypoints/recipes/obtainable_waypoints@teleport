@@ -1,2 +1,0 @@
-ID,Key,Product,Craft Table,Recipe,Product Quantity,Unlockable,(!)Folder,Locked,Affected By Global Multiplier
-5001,obtainable_waypoints@teleport,E_ITEMS.obtainable_waypoints@teleport,undefined,"[[E_ITEMS.rock,8],[E_ITEMS.potion_mp_100,1]]",1,TRUE,undefined,FALSE,FALSE

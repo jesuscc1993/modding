@@ -1,0 +1,2 @@
+ID,Key,(!)Folder,Event,Code
+5001,obtainable_waypoints@obtainable_waypoints,root,E_CS_EVENT.None,OnModLoad(function() {\n    npc_add_to_shop(E_NPCS.summoner#$# %$%obtainable_waypoints@teleport_item%$%);\n});
