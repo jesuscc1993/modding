@@ -1561,8 +1561,8 @@ function OnCreatureUpdate(C)
   UpdateScriptedMaterialAnims(C, player)
   CheckForCompanionContextualR3(C)
   local hasPlayerMarker = C:HasMarker("PlayerCharacter")
-  if isPlayer and player:MeterGetValue("Health") < player:MeterGetMax("Health") and not game.Combat.GetCombatStatus() then
-  	player:MeterSetValue("Health", math.min(player:MeterGetValue("Health") + 0.05, player:MeterGetMax("Health")))
+  if isPlayer and not game.Combat.GetCombatStatus() and player:MeterGetValue("Health") < player:MeterGetMax("Health") then
+    player:MeterSetValue("Health", math.min(player:MeterGetValue("Health") + 0.05, player:MeterGetMax("Health")))
   end
   if isPlayer and not hasPlayerMarker then
     C:AddMarker("PlayerCharacter")
