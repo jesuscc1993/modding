@@ -49,9 +49,11 @@ local megaBusterBuildRateHalf = 66.666664
 local megaBusterBuildRateFull = 40
 local megaBusterDecayRate = 20
 local defProtoCooldown = 0
+
 function LuaHook_ResetMegaBusterGracePeriodOnGuardPoint()
   defProtoCooldown = megaBusterGracePeriodGuardPoint
 end
+
 local VFS = {}
 VFS.UnlockHeaderHack = engine.VFSBool.New("--------------------- UNLOCKS ------------------------------------------------------------")
 VFS.CheatsAndDebugHeaderHack = engine.VFSBool.New("--------------------- CHEATS AND DEBUG ---------------------------------------------------")
@@ -202,23 +204,28 @@ local showLowHealthWarningTimer = 0
 local showLowHealthWarningTimerMax = 10
 local shieldSoundEmitter, chainSoundEmitterR, chainSoundEmitterL
 local lowHealthSFXCall = false
+
 function LuaHook_CheckTraverseLink(crt, data)
   if crt:GetTraverseLink() == nil then
     return data:FindOutcomeBranchesEntry("BranchNav")
   end
 end
+
 function LuaHook_PyreFire()
   local level = game.FindLevel("For200_House")
   level:CallScript("LuaHook_PyreFire_For200")
 end
+
 local encounterMusic = {}
 encounterMusic.combatMusicStart = nil
 encounterMusic.combatMusicEnd = nil
 encounterMusic.activeEnemies = 0
 encounterMusic.lastEnemyCount = 0
+
 function CombatEncounterStarted(ai, startMusic, endMusic)
   EvaluateCombatMusicStart(ai, startMusic, endMusic)
 end
+
 function EvaluateCombatMusicStart(ai, startMusic, endMusic)
   if startMusic and endMusic and encounterMusic.combatMusicStart == nil and encounterMusic.combatMusicEnd == nil then
     encounterMusic.combatMusicStart = startMusic
@@ -226,11 +233,13 @@ function EvaluateCombatMusicStart(ai, startMusic, endMusic)
     game.Audio.StartMusic(encounterMusic.combatMusicStart)
   end
 end
+
 function CombatEncounterEnded(ai, endMusicOverride)
   if bboard:GetNumber("ActiveCombatEncounters") <= 0 and encounterMusic.combatMusicStart ~= nil then
     EvaluateCombatMusicEnd(ai, endMusicOverride)
   end
 end
+
 function EvaluateCombatMusicEnd(ai, endMusicOverride)
   if encounterMusic.combatMusicEnd ~= nil or endMusicOverride ~= nil then
     local endMusic = endMusicOverride or encounterMusic.combatMusicEnd
@@ -239,10 +248,13 @@ function EvaluateCombatMusicEnd(ai, endMusicOverride)
     encounterMusic.combatMusicEnd = nil
   end
 end
+
 function DisableNextDockingCheckpoint()
 end
+
 function LuaHook_CheckpointOnExit()
 end
+
 local debugPosStart, debugPosEnd, debugPosDistanceXZ, debugPosDistanceY
 local debugPosSwitch = true
 local debugPosResult
@@ -296,6 +308,7 @@ local fseVignetteMoveArmor = {
 }
 local padColorReset = false
 local reviveDisabled = false
+
 function _G.OnGOCreateLuaState(go)
   go:SetBlackboardSize(16)
   bboard = go:GetPrivateBlackboard()
@@ -314,6 +327,7 @@ function _G.OnGOCreateLuaState(go)
     go:SetOverrideStatusEffectIconParent("KRATOS_HEALTH_BAR")
   end
 end
+
 global = {}
 global.inventory = {}
 rageLevel = 0
@@ -343,7 +357,8 @@ reticleTargetCreaturePrevious = nil
 global.DebugLoadout = {}
 global.DebugLoadout.initialized = false
 global.DebugLoadout.pickups = {"Bifrost", "Blades"}
-local DebugGiveHeroLoadout = function(C)
+
+local function DebugGiveHeroLoadout(C)
   if game.Resources.SetDebugAddMode then
     game.Resources.SetDebugAddMode(true)
   end
@@ -365,22 +380,26 @@ local DebugGiveHeroLoadout = function(C)
     game.Resources.SetDebugAddMode(false)
   end
 end
-local IsValidRuneID = function(runeID)
+
+local function IsValidRuneID(runeID)
   return runeID ~= nil and runeID ~= 1
 end
-local HasFlag = function(runeID, flag)
+
+local function HasFlag(runeID, flag)
   local hasFlag = false
   if IsValidRuneID(runeID) then
     hasFlag = game.Wallets.RuneHasFlag("HERO", runeID, {flag})
   end
   return hasFlag
 end
+
 function LuaHook_PlaytestRoomIsSpecialOnCooldown()
   local thisLevel = kratos.GroundLevel
   if thisLevel == "WAD_PlaytestTraining" or game.FindLevel("PlaytestTraining") then
     thisLevel:CallScript("LuaHook_PlaytestRoomIsSpecialOnCooldown")
   end
 end
+
 function LuaHook_CombatEvent_CooldownActivated(C, pickupName)
   local pickupNameString = tostring(pickupName)
   local specialLight = kratos.PickupGetPickupNameInSlot(kratos, "WeaponSpecial_Light")
@@ -432,15 +451,19 @@ function LuaHook_CombatEvent_CooldownActivated(C, pickupName)
     end
   end
 end
+
 local HipSelectionValue
+
 function GrabHipSelection(C)
   if HipSelectionValue == nil then
     HipSelectionValue = C:GetAnimDriver("HipSelectionDriver")
   end
 end
+
 function LuaHook_DisableRevive(ai, toggleValue)
   reviveDisabled = toggleValue
 end
+
 function IsDeathAllowed(C)
   if C:CheckDynamicFlag("DisallowDeath") then
     return false
@@ -466,10 +489,12 @@ function IsDeathAllowed(C)
     return true
   end
 end
+
 local breathEffect
 local fakePad = {}
 local tempDebuffBurnTimer = 0
 local debugFastLeakTable
+
 function DoMemoryDebugHelpers()
   if game.GetLeakMemory() then
     if debugFastLeakTable == nil then
@@ -487,21 +512,27 @@ function DoMemoryDebugHelpers()
     end
   end
 end
+
 function LuaHook_DeathFadeoutQuick()
   game.Combat.KillPlayer(1)
 end
+
 function EnableColdIdle(C)
   C:SetMood("MOOD_DEEP_SNOW")
 end
+
 function DisableColdIdle(C)
   C:ClearMood("MOOD_DEEP_SNOW")
 end
+
 function EnablePanicIdle(C)
   C:SetMood("MOOD_FRENZYRUN")
 end
+
 function DisablePanicIdle(C)
   C:ClearMood("MOOD_FRENZYRUN")
 end
+
 function SetupMarkerLogic(C, typeValue, VFS_OptionStrings)
   for k, v in ipairs(VFS_OptionStrings) do
     if k ~= typeValue and C:HasMarker(v) then
@@ -512,6 +543,7 @@ function SetupMarkerLogic(C, typeValue, VFS_OptionStrings)
     C:AddMarker(VFS_OptionStrings[typeValue])
   end
 end
+
 function RunMarkerLogic(C)
   SetupMarkerLogic(C, gVFSSpecialType.value, {
     "VFS_Old",
@@ -554,6 +586,7 @@ function RunMarkerLogic(C)
     "VFS_PullSideArm"
   })
 end
+
 defProtoX = 440
 defProtoY = 840
 defProtoWidth = 200
@@ -634,6 +667,7 @@ meterVisuals = {}
 meterVisuals.time = 0.5
 meterVisuals.scaleRate = 1.15
 meterVisuals.filledList = {}
+
 function DrawCenteredRectangle(C, vis)
   local xloc = vfsMeterValues.xLoc.value + vfsMeterValues.pipSize.value * vis.location * vfsMeterValues.scale.value - vfsMeterValues.pipSize.value * 0.5 - vfsMeterValues.pipSize.value * vis.currentScale * vfsMeterValues.scale.value * 0.6
   local yloc = vfsMeterValues.yLoc.value - vfsMeterValues.height.value * 0.5 * vfsMeterValues.scale.value * vis.currentScale
@@ -642,6 +676,7 @@ function DrawCenteredRectangle(C, vis)
   local finalColor = bit32.bor(bit32.bor(vis.color, red), green)
   engine.DrawRect2D(xloc, yloc, vfsMeterValues.pipSize.value * vis.currentScale * vfsMeterValues.scale.value, vfsMeterValues.height.value * vis.currentScale * vfsMeterValues.scale.value, finalColor, vis.time * 200)
 end
+
 function DrawCenteredSquare(C, vis)
   local xloc = vis.location - vfsMeterValues.pipSize.value * 0.5 * vfsMeterValues.scale.value * vis.currentScale
   local yloc = vfsMeterValues.yLoc.value - vfsMeterValues.pipSize.value * 0.5 * vfsMeterValues.scale.value * vis.currentScale
@@ -650,6 +685,7 @@ function DrawCenteredSquare(C, vis)
   local finalColor = bit32.bor(bit32.bor(vis.color, red), green)
   engine.DrawRect2D(xloc, yloc, vfsMeterValues.pipSize.value * vis.currentScale * vfsMeterValues.scale.value, vfsMeterValues.pipSize.value * vis.currentScale * vfsMeterValues.scale.value, finalColor, vis.time * 200)
 end
+
 function AddMeterVisualFX(C, location, color, fxType)
   local popup = {}
   popup.time = meterVisuals.time
@@ -661,6 +697,7 @@ function AddMeterVisualFX(C, location, color, fxType)
   popup.fxType = fxType
   table.insert(meterVisuals.filledList, popup)
 end
+
 function UpdateMeterVisualFX(C)
   local dt = C:GetUnitTime()
   for i = #meterVisuals.filledList, 1, -1 do
@@ -682,6 +719,7 @@ function UpdateMeterVisualFX(C)
     end
   end
 end
+
 function DrawBorder(C)
   if tempMeter.currentType == "connected" then
     local xOffset = 0
@@ -817,6 +855,7 @@ function DrawBorder(C)
     end
   end
 end
+
 function OverheatMeterLogic(C)
   if tempMeter.types.overheat.displayType == "inOrder" then
     tempMeter.types.overheat.displayMeters[1] = "AxeLight"
@@ -832,6 +871,7 @@ function OverheatMeterLogic(C)
     end
   end
 end
+
 function DrawMeter(C)
   ResetMeters(C)
   if tempMeter.currentType == "default" then
@@ -1022,6 +1062,7 @@ function DrawMeter(C)
     end
   end
 end
+
 function SetMeter(C)
   local reduction = C:MeterGetValue("SpecialMeterReduction") * vfsMeterValues.meterGainMultiplier.value
   C:MeterSetValue("SpecialMeterReduction", 0)
@@ -1180,6 +1221,7 @@ function SetMeter(C)
     C:MeterSetValue("MajorRuneMeter", majorValue)
   end
 end
+
 function ValidType(C)
   if vfsMeterValues.queueType.value == 1 then
     tempMeter.types.overheat.displayType = "queue"
@@ -1210,6 +1252,7 @@ function ValidType(C)
   end
   return false
 end
+
 function MeterReductionLogic(C)
   local reduction = C:MeterGetValue("SpecialMeterReduction")
   C:MeterSetValue("SpecialMeterReduction", 0)
@@ -1217,11 +1260,13 @@ function MeterReductionLogic(C)
   C:MeterSetValue("SpecialMeter", currentValue)
   tempMeter.types.default.value = currentValue
 end
+
 function DrawSpecialMeter(C)
   if ValidType(C) then
     ResetMeters(C)
   end
 end
+
 function ForceResetMeter(C)
   if C ~= nil then
     tempMeter.types.default.value = gRunicTable.pipCount * vfsMeterValues.pipSize.value
@@ -1262,9 +1307,11 @@ function ForceResetMeter(C)
     tempMeter.types.default.value = tempMeter.types.default.value
   end
 end
+
 function LuaHook_ForceResetSpecialMeters(C)
   ResetMeters(C, true)
 end
+
 function ResetMeters(C, force)
   if force == nil then
     force = false
@@ -1308,12 +1355,14 @@ function ResetMeters(C, force)
     tempMeter.types.default.value = tempMeter.types.default.value
   end
 end
+
 function OverheatMeterAddLogic(C, meterType, value)
   if tempMeter.types.overheat.displayType == "queue" and tempMeter.types.overheat.meters[meterType].value <= 0 then
     table.insert(tempMeter.types.overheat.displayMeters, #tempMeter.types.overheat.displayMeters + 1, meterType)
   end
   tempMeter.types.overheat.meters[meterType].value = tempMeter.types.overheat.meters[meterType].value + value
 end
+
 function SpecialMeterAdd(C, meterType, value)
   print("I'm in special meter add")
   if value == 25 then
@@ -1407,6 +1456,7 @@ function SpecialMeterAdd(C, meterType, value)
     uiCalls.UI_Event_Weapon_Special_Activated(tempMeter.types.connected.visuals[insertIndex])
   end
 end
+
 function AddMajorRune(C, meterType)
   if tempMeter.currentType == "majorRune" then
     local meterptr = tempMeter.types.majorRune.meters[meterType]
@@ -1427,103 +1477,134 @@ function AddMajorRune(C, meterType)
     }
   end
 end
+
 function EmptyShellSound()
   if tempMeter.types.connected.meterCount == 0 then
     print("fire off empty sound")
   end
 end
+
 function LuaHook_MajorAXE_L(C)
   AddMajorRune(C, "AxeLight")
 end
+
 function LuaHook_MajorAXE_H(C)
   AddMajorRune(C, "AxeHeavy")
 end
+
 function LuaHook_MajorBLADE_L(C)
   AddMajorRune(C, "BladeLight")
 end
+
 function LuaHook_MajorBLADE_H(C)
   AddMajorRune(C, "BladeHeavy")
 end
+
 function LuaHook_SpecialMeter_1AXE_L(C)
   SpecialMeterAdd(C, "AxeLight", 25)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_2AXE_L(C)
   SpecialMeterAdd(C, "AxeLight", 50)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_3AXE_L(C)
   SpecialMeterAdd(C, "AxeLight", 75)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_4AXE_L(C)
   SpecialMeterAdd(C, "AxeLight", 100)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_1AXE_H(C)
   SpecialMeterAdd(C, "AxeHeavy", 25)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_2AXE_H(C)
   SpecialMeterAdd(C, "AxeHeavy", 50)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_3AXE_H(C)
   SpecialMeterAdd(C, "AxeHeavy", 75)
   print("fire off special attack")
 end
+
 function LuaHook_SpecialMeter_4AXE_H(C)
   SpecialMeterAdd(C, "AxeHeavy", 100)
 end
+
 function LuaHook_SpecialMeter_1BLADE_L(C)
   SpecialMeterAdd(C, "BladeLight", 25)
 end
+
 function LuaHook_SpecialMeter_2BLADE_L(C)
   SpecialMeterAdd(C, "BladeLight", 50)
 end
+
 function LuaHook_SpecialMeter_3BLADE_L(C)
   SpecialMeterAdd(C, "BladeLight", 75)
 end
+
 function LuaHook_SpecialMeter_4BLADE_L(C)
   SpecialMeterAdd(C, "BladeLight", 100)
 end
+
 function LuaHook_SpecialMeter_1BLADE_H(C)
   SpecialMeterAdd(C, "BladeHeavy", 25)
 end
+
 function LuaHook_SpecialMeter_2BLADE_H(C)
   SpecialMeterAdd(C, "BladeHeavy", 50)
 end
+
 function LuaHook_SpecialMeter_3BLADE_H(C)
   SpecialMeterAdd(C, "BladeHeavy", 75)
 end
+
 function LuaHook_SpecialMeter_4BLADE_H(C)
   SpecialMeterAdd(C, "BladeHeavy", 100)
 end
+
 function LuaHook_SpecialMeter_1SPEAR_L(C)
   SpecialMeterAdd(C, "SpearLight", 25)
 end
+
 function LuaHook_SpecialMeter_2SPEAR_L(C)
   SpecialMeterAdd(C, "SpearLight", 50)
 end
+
 function LuaHook_SpecialMeter_3SPEAR_L(C)
   SpecialMeterAdd(C, "SpearLight", 75)
 end
+
 function LuaHook_SpecialMeter_4SPEAR_L(C)
   SpecialMeterAdd(C, "SpearLight", 100)
 end
+
 function LuaHook_SpecialMeter_1SPEAR_H(C)
   SpecialMeterAdd(C, "SpearHeavy", 25)
 end
+
 function LuaHook_SpecialMeter_2SPEAR_H(C)
   SpecialMeterAdd(C, "SpearHeavy", 50)
 end
+
 function LuaHook_SpecialMeter_3SPEAR_H(C)
   SpecialMeterAdd(C, "SpearHeavy", 75)
 end
+
 function LuaHook_SpecialMeter_4SPEAR_H(C)
   SpecialMeterAdd(C, "SpearHeavy", 100)
 end
+
 local previousTarget
+
 function MarkCurrentTarget(C)
   local currentTarget = C:GetTargetCreature()
   if currentTarget ~= previousTarget then
@@ -1534,15 +1615,18 @@ function MarkCurrentTarget(C)
     currentTarget:AddMarker("CurrentTarget")
   end
 end
+
 function IsPlayer()
   return kratos ~= nil and kratos:GetPlayer() ~= nil
 end
+
 local DynamicFlagLargeIntegerOptimization = false
 local isAttacking = false
 local isBlocking = false
 local isPlayer = false
 local isAiming = false
 local BOOToggle1 = false
+
 function OnCreatureUpdate(C)
   if kratos == nil then
     kratos = C
@@ -2028,7 +2112,8 @@ function OnCreatureUpdate(C)
     end
   end
 end
-local RemovePlayerPickupIfAcquired = function(pickupName)
+
+local function RemovePlayerPickupIfAcquired(pickupName)
   if kratos:PickupIsAcquired(pickupName) then
     if game.Pickup.NGP_RelinquishPickupAndClearProfile then
       game.Pickup.NGP_RelinquishPickupAndClearProfile(pickupName)
@@ -2037,7 +2122,8 @@ local RemovePlayerPickupIfAcquired = function(pickupName)
     end
   end
 end
-local ResetResourceForNGP = function(resourceName)
+
+local function ResetResourceForNGP(resourceName)
   if game.Wallets.NGP_ResetResource then
     game.Wallets.NGP_ResetResource("HERO", resourceName)
   else
@@ -2047,6 +2133,7 @@ local ResetResourceForNGP = function(resourceName)
     end
   end
 end
+
 function LuaHook_RageModePerkActivation()
   local HealthMeterCurrent = kratos.MeterGetValue(kratos, "Health")
   local RageMeterCurrent = kratos.MeterGetValue(kratos, "Blood")
@@ -2057,12 +2144,14 @@ function LuaHook_RageModePerkActivation()
     kratos:PickupAcquire("Buff_RageBurst")
   end
 end
+
 function LuaHook_HasReticleTarget(c, data)
   if kratos.ReticleTargetCreature ~= nil then
     return data:FindOutcomeBranchesEntry("HasTarget")
   end
   return data:FindOutcomeBranchesEntry("NoTarget")
 end
+
 function LuaHook_DropThrowable()
   for weaponInfo in kratos:IterateActiveWeapons() do
     local throwObj = weaponInfo.Weapon
@@ -2072,6 +2161,7 @@ function LuaHook_DropThrowable()
     end
   end
 end
+
 function LuaHook_ThrowAttached()
   game.Interact.EnableTags("ThrowableCrystal")
   for weaponInfo in kratos:IterateActiveWeapons() do
@@ -2086,18 +2176,23 @@ function LuaHook_ThrowAttached()
     end
   end
 end
+
 function GetAxeWeapon()
   return kratos:GetWeapon("kWeaponAxe")
 end
+
 function GetSpearWeapon()
   return kratos:GetWeapon("kWeaponSpear")
 end
+
 function GetLeftBladeWeapon()
   return kratos:GetWeapon("kWeaponBladeLeft")
 end
+
 function GetRightBladeWeapon()
   return kratos:GetWeapon("kWeaponBladeRight")
 end
+
 function GetBOOWeapon()
   if kratos ~= nil then
     return kratos:GetWeapon("kWeaponRageModeOlympus")
@@ -2105,6 +2200,7 @@ function GetBOOWeapon()
     return nil
   end
 end
+
 function GetBOOEquipped()
   local currentWeapon = kratos.GetCurrentWeapon and kratos:GetCurrentWeapon() or nil
   if currentWeapon ~= nil then
@@ -2113,32 +2209,42 @@ function GetBOOEquipped()
     return nil
   end
 end
+
 function GetShieldWeapon()
   return kratos:GetWeapon("kWeaponShield")
 end
+
 function GuardianShieldEquipped()
   return kratos:PickupIsAcquired("DefensePrototype_TypeDefault")
 end
+
 function SiegeGuardShieldEquipped()
   return kratos:PickupIsAcquired("DefensePrototype_TypeGuard")
 end
+
 function SiegeGuardShieldEquipped_NoDoingGroundSmash()
   return kratos:PickupIsAcquired("DefensePrototype_TypeGuard") and not kratos:CheckDynamicFlag("SiegeGuard_GroundSmash")
 end
+
 function PerfectParryShieldEquipped()
   return kratos:PickupIsAcquired("DefensePrototype_TypeParry")
 end
+
 function BlitzRushShieldEquipped()
   return kratos:PickupIsAcquired("DefensePrototype_TypeBlitz")
 end
+
 function MegaBusterShieldEquipped()
   return kratos:PickupIsAcquired("DefensePrototype_TypeBuster")
 end
+
 function TrinketArmorParryEquipped()
   return kratos:PickupIsAcquired("KratosArmorTrinket_Parry")
 end
+
 function LuaHook_AxeFrostOnSlow()
 end
+
 function LuaHook_AxeFrostOn()
   local axe = GetAxeWeapon()
   if axe ~= nil then
@@ -2153,6 +2259,7 @@ function LuaHook_AxeFrostOn()
     })
   end
 end
+
 function LuaHook_AxeFrostOff()
   local axe = GetAxeWeapon()
   if axe ~= nil then
@@ -2167,6 +2274,7 @@ function LuaHook_AxeFrostOff()
     })
   end
 end
+
 function LuaHook_BladeLightUp()
   for weaponInfo in kratos:IterateActiveWeapons() do
     local gameobj = weaponInfo.Weapon
@@ -2175,6 +2283,7 @@ function LuaHook_BladeLightUp()
     end
   end
 end
+
 function LuaHook_DrainBladesOn()
   for weaponInfo in kratos:IterateActiveWeapons() do
     local gameobj = weaponInfo.Weapon
@@ -2183,6 +2292,7 @@ function LuaHook_DrainBladesOn()
     end
   end
 end
+
 function LuaHook_DrainBladesOff()
   for weaponInfo in kratos:IterateActiveWeapons() do
     local gameobj = weaponInfo.Weapon
@@ -2191,6 +2301,7 @@ function LuaHook_DrainBladesOff()
     end
   end
 end
+
 function LuaHook_ApplySpearBlackCloth()
   for weaponInfo in kratos:IterateActiveWeapons() do
     local gameobj = weaponInfo.Weapon
@@ -2199,6 +2310,7 @@ function LuaHook_ApplySpearBlackCloth()
     end
   end
 end
+
 function Update_PositionDistanceDebugTable()
   if VFS.PositionDistanceDebug.value == true then
     local positionDistanceDebugTable = {}
@@ -2237,56 +2349,69 @@ function Update_PositionDistanceDebugTable()
     end
   end
 end
+
 function LuaHookScript_SpecialReticleOn()
   uiCalls.UI_Event_Minigame_Start()
 end
+
 function LuaHookScript_SpecialReticleOff()
   uiCalls.UI_Event_Minigame_End()
 end
+
 function LuaHook_FrostMeterState()
 end
+
 function LuaHook_UI_PouchOn()
   local uiKratos = game.UI.FindCreatureByGOName("goHeroA00")
   if uiKratos then
     uiKratos:ShowJoint(uiKratos:GetJointIndex("ashPouch1"))
   end
 end
+
 function LuaHook_UI_PouchOff()
   local uiKratos = game.UI.FindCreatureByGOName("goHeroA00")
   if uiKratos then
     uiKratos:HideJoint(uiKratos:GetJointIndex("ashPouch1"))
   end
 end
+
 function LuaHook_UI_ShieldOn()
   local uiKratos = game.UI.FindCreatureByGOName("goHeroA00")
   if uiKratos then
     uiKratos:ShowJoint(uiKratos:GetJointIndex("JOshieldHolster1_LeftLowerArm1Twist2_0"))
   end
 end
+
 function LuaHook_UI_ShieldOff()
   local uiKratos = game.UI.FindCreatureByGOName("goHeroA00")
   if uiKratos then
     uiKratos:HideJoint(uiKratos:GetJointIndex("JOshieldHolster1_LeftLowerArm1Twist2_0"))
   end
 end
+
 function LuaHook_TurnRageModeOn()
   uiCalls.UI_Event_Turn_Rage_Meter_On()
 end
+
 function LuaHook_TurnRageModeOff()
   uiCalls.UI_Event_Turn_Rage_Meter_Off()
 end
+
 function LuaHook_RageModeEnter()
   game.Interact.DisableTags("NotInRageMode")
   uiCalls.UI_Event_Rage_Start()
 end
+
 function LuaHook_RageBool()
   inRageMode = true
 end
+
 function LuaHook_RageModeExit()
   uiCalls.UI_Event_Rage_End()
   game.Interact.EnableTags("NotInRageMode")
   inRageMode = false
 end
+
 function LuaHook_ForceCineRageModeExit()
   local player = game.Player.FindPlayer()
   if kratos:PickupIsAcquired("RageMode") and kratos:PickupGetStage("RageMode") ~= 0 and IsPlayer() and player.ClearMarkedWeapon ~= nil then
@@ -2303,6 +2428,7 @@ function LuaHook_ForceCineRageModeExit()
   inRageMode = false
   LuaHook_ForceClearStatusEffects()
 end
+
 function LuaHook_ForceClearStatusEffects()
   if kratos:PickupIsAcquired("Debuff_Hero_Frost") then
     kratos:PickupRelinquish("Debuff_Hero_Frost")
@@ -2333,10 +2459,13 @@ function LuaHook_ForceClearStatusEffects()
   kratos:MeterSetValueOverride("Lightning", 0)
   kratos:MeterSetValue("Bifrost", 0)
 end
+
 function LuaHook_RageGrabActivated()
   uiCalls.UI_Event_Rage_Grab()
 end
+
 local SprintCount = 0
+
 function LuaHook_SprintCounter(C)
   if SprintCount < 5 then
     SprintCount = SprintCount + 1
@@ -2346,13 +2475,16 @@ function LuaHook_SprintCounter(C)
     SprintCount = 0
   end
 end
+
 function LuaHook_SprintCounterReset(C)
   SprintCount = 0
 end
+
 function LuaHook_RequestTagTeam()
   _G.global.tagTeamPossible = false
   engine.SendHook("OnRequestTagTeamHook", game.AI.FindSon())
 end
+
 function LuaHook_SetQuestGiverMarker(crt, setMark)
   if setMark then
     crt:AddMarker("QuestGiverInteract")
@@ -2362,20 +2494,25 @@ function LuaHook_SetQuestGiverMarker(crt, setMark)
     crt:RemoveDynamicFlag("QuestGiverInteract")
   end
 end
+
 function OnResponseTagTeamHook(go, result)
   _G.global.tagTeamPossible = result
 end
+
 function LuaHook_GetLoot()
   if game.AI.FindSon() ~= nil then
     engine.SendHook("OnGetRuneAmmo", game.AI.FindSon())
   end
 end
+
 function OnFollowUpPromptCreate()
   mpicon.Create("WORLD_INTERACT")
 end
+
 function OnFollowUpPromptOff()
   mpicon.Off("WORLD_INTERACT")
 end
+
 function OnRecLootTableHook(go, result)
   _G.global.recLootTable = result
   if _G.global.inventory[result] == nil then
@@ -2384,12 +2521,15 @@ function OnRecLootTableHook(go, result)
     _G.global.inventory[result] = _G.global.inventory[result] + 1
   end
 end
+
 function OnSonRevive()
   kratos:TriggerMoveEvent("SonRevive")
 end
+
 function OnSonCoopJumpAttack()
   kratos:TriggerMoveEvent("SonCoop")
 end
+
 function LuaHookDecision_CanSonPerformSpecial()
   local sonAI = game.AI.FindSon()
   if sonAI == nil then
@@ -2400,6 +2540,7 @@ function LuaHookDecision_CanSonPerformSpecial()
   end
   return true
 end
+
 function LuaHookDecision_CanShieldBash()
   local target = kratos:GetTargetCreature()
   if target ~= nil and (kratos.WorldPosition - target.WorldPosition):Length() <= 4 and target:PickupIsAcquired("Son_HoldMark") then
@@ -2407,8 +2548,10 @@ function LuaHookDecision_CanShieldBash()
   end
   return false
 end
+
 local charging = false
 local enumToggleLockOn = tweaks.eControls.kC_ToggleLockOn
+
 function SendInputDataToCompanion()
   if not isPlayer then
     return
@@ -2424,6 +2567,7 @@ function SendInputDataToCompanion()
     game.AI.SubmitStim("R3ButtonStim", engine.Vector.New(0, 0, 0), kratos)
   end
 end
+
 function SetInfluenceToTheaterOfOperation(go)
   local son = game.AI.FindSon()
   if son == nil then
@@ -2438,18 +2582,21 @@ function SetInfluenceToTheaterOfOperation(go)
     go:SetInfluenceConeIsEnabled(activateInfluence)
   end
 end
+
 function LuaHookDecision_IsLastEnemy(playerCreature)
   if #DL.FindLivingEnemies(playerCreature, 35) < 1 then
     return true
   end
   return false
 end
+
 function LuaHook_ForceSonFail(ai, data)
   local companion = game.AI.GetCompanion()
   if companion ~= nil then
     engine.SendHook("OnCommandCompanionStart", companion, "Knife")
   end
 end
+
 function LuaHook_FlyerSteal(playerCreature)
   local healthStoneCount = playerCreature:GetPlayerCounter("ShardHealth")
   local rageStoneCount = playerCreature:GetPlayerCounter("ShardRage")
@@ -2465,8 +2612,10 @@ function LuaHook_FlyerSteal(playerCreature)
     print("No Inventory")
   end
 end
+
 function UpdateStunGrabDecisionTimer(C)
 end
+
 function LuaHook_TraverseLink_Vault1m(C)
   local traverseLink = C:GetTraverseLink()
   if translationDriver and rotationDriver and traverseLink then
@@ -2474,6 +2623,7 @@ function LuaHook_TraverseLink_Vault1m(C)
     rotationDriver.ValueVec = traverseLink.WarpDirection
   end
 end
+
 function LuaHook_SetTrackingObjectOnSon(playerCreature)
   for attachmentInfo in playerCreature:IterateActiveWeapons() do
     print("tracking info is...", attachmentInfo.Weapon:GetName())
@@ -2482,6 +2632,7 @@ function LuaHook_SetTrackingObjectOnSon(playerCreature)
     end
   end
 end
+
 function LuaHook_ReflectProjectile(playerCreature)
   local arrowData = {}
   arrowData.Tweak = "ARR_DRAUGR_PROJECTILE_PARRY"
@@ -2495,17 +2646,21 @@ function LuaHook_ReflectProjectile(playerCreature)
   end
   game.Combat.EmitArrow(arrowData)
 end
+
 global.beam_deflecting = false
+
 function LuaHookScript_DeflectBeam(ai, data)
   print("Golem Deflect!")
   global.beam_deflecting = true
 end
+
 function LuaHookScript_DeflectBeam_Trigger(ai, data)
   if global.beam_deflecting then
     local attacker = ai:GetLastAttacker()
     attacker:TriggerMoveEvent("StunNow")
   end
 end
+
 function LuaHook_DeflectMissile(ai, data)
   print("deflecting missile")
   local target = ai:GetLastAttacker()
@@ -2518,13 +2673,15 @@ function LuaHook_DeflectMissile(ai, data)
   arrowData.EmitOffset = engine.Vector.New(0, 0.85, 0)
   game.Combat.EmitArrow(arrowData)
 end
-local IncreaseMomentum = function(C, amount)
+
+local function IncreaseMomentum(C, amount)
   if C:HasMeter("MomentumBaseShared") then
     C:MeterSetValue("MomentumBaseShared", C:MeterGetValue("MomentumBaseShared") + amount)
     LuaHook_MomentumAxeIncrease()
     LuaHook_MomentumBladesIncrease()
   end
 end
+
 function OnWeaponHitGameObject(Creature, Weapon, HitGameObject, HitInfo)
   local isCreature = HitInfo.HitCreature
   local precisionHit = HitInfo.IsPrecision
@@ -2668,11 +2825,13 @@ function OnWeaponHitGameObject(Creature, Weapon, HitGameObject, HitInfo)
     end
   end
 end
+
 function UpdateSprintMaintainHelper(C)
   if C:PickupIsAcquired("SprintMaintainHelper") and not C:HasMarker("MaintainSprint") then
     C:PickupRelinquish("SprintMaintainHelper")
   end
 end
+
 local weaponSwitchButtonStates = {up = 1, down = 0}
 local weaponSwitchData = {
   leftButtonState = weaponSwitchButtonStates.up,
@@ -2686,23 +2845,27 @@ local weaponSwitchData = {
   lastDownPickupStage = nil,
   spear = nil
 }
+
 function GivePickupIfNotAcquired(C, pickup)
   if not C:PickupIsAcquired(pickup) then
     C:PickupAcquire(pickup)
   end
 end
+
 function SetStageAndRelinquishPickupIfAcquired(C, stage, pickup)
   if C:PickupIsAcquired(pickup) then
     C:PickupSetStage(pickup, 4)
     C:PickupRelinquish(pickup)
   end
 end
+
 function IsPickupAcquiredNotAtStage(C, pickup, stage)
   if C:PickupIsAcquired(pickup) and C:PickupGetStage(pickup) ~= stage then
     return true
   end
   return false
 end
+
 local Hash_IgnoreWeaponSwitchRequests = game.LargeInteger.HashString("IgnoreWeaponSwitchRequests")
 local Hash_AllowWeaponSwitchRequests = game.LargeInteger.HashString("AllowWeaponSwitchRequestsOverride")
 local Hash_TraverseGraph = game.LargeInteger.HashString("TraverseGraph")
@@ -2714,6 +2877,7 @@ local Hash_StriderHang = game.LargeInteger.HashString("StriderHang")
 local Hash_Quickturn = game.LargeInteger.HashString("Quickturn")
 local Hash_Parry = game.LargeInteger.HashString("Parry")
 local Hash_QuickTurn_Defend = game.LargeInteger.HashString("QuickTurn_Defend")
+
 function InvalidateWeaponSwitchRequests(C)
   if C:CheckDynamicFlagLargeInteger(Hash_AllowWeaponSwitchRequests) then
     return
@@ -2723,9 +2887,11 @@ function InvalidateWeaponSwitchRequests(C)
     return
   end
 end
+
 function LuaHook_ClearLastInput(Creature)
   game.ClearLastInput()
 end
+
 function UpdateMomentum(C)
   local hasMomentumMeter = C:HasMeter("Momentum")
   if hitCounterDrain == true and C:IsDoingSyncMove() == false and hasMomentumMeter then
@@ -2772,6 +2938,7 @@ function UpdateMomentum(C)
     end
   end
 end
+
 local momentumStops = {66, 33}
 local momentumLostOnHitPerDifficultyNotFull = {
   ["1"] = 25,
@@ -2785,7 +2952,8 @@ local momentumLostOnHitPerDifficultyNotFullPerkResilience = {
   ["3"] = 30,
   ["4"] = 50
 }
-local GetNextMomentumStopFromMeterValue = function(C, meterName)
+
+local function GetNextMomentumStopFromMeterValue(C, meterName)
   local meterValue = C:MeterGetValue(meterName)
   for i = #momentumStops, 1, -1 do
     if meterValue > momentumStops[i] then
@@ -2794,7 +2962,8 @@ local GetNextMomentumStopFromMeterValue = function(C, meterName)
   end
   return 0
 end
-local RoundDifficultyValueToString = function(value)
+
+local function RoundDifficultyValueToString(value)
   if value <= 1 then
     return "1"
   elseif value <= 2 then
@@ -2805,7 +2974,8 @@ local RoundDifficultyValueToString = function(value)
     return "4"
   end
 end
-local ClearMomentumType_Incremental = function(Creature)
+
+local function ClearMomentumType_Incremental(Creature)
   if Creature:HasMeter("MomentumBaseShared") and (Creature:HasMeter("Momentum") or Creature:HasMeter("MomentumBlades") or Creature:HasMeter("MomentumSpear")) then
     local difficultyValue = Creature:AttributeGetValue("Difficulty")
     local difficultyValueString = RoundDifficultyValueToString(difficultyValue)
@@ -2828,6 +2998,7 @@ local ClearMomentumType_Incremental = function(Creature)
     hitCounterDrain = false
   end
 end
+
 function Luahook_MomentumClear(Creature)
   if Creature:PickupIsAcquired("MomentumArmor") and Creature:PickupGetStage("MomentumArmor") == 1 and Creature:MeterGetValue("MomentumBaseShared") >= 100 then
     Creature:PickupSetStage("MomentumArmor", 2)
@@ -2835,32 +3006,39 @@ function Luahook_MomentumClear(Creature)
     ClearMomentumType_Incremental(Creature)
   end
 end
-local HitCounterStartDrain = function()
+
+local function HitCounterStartDrain()
   hitCounterDrain = true
 end
+
 function LuaHook_MomentumAxeIncrease()
   hitCounterDrain = false
   if kratos:HasMeter("Momentum") then
     game.Audio.SetBusLevelRTPCValue("WPN_Axe_Momentum_Level", kratos:MeterGetValue("Momentum") / kratos:MeterGetMax("Momentum"))
   end
 end
+
 function LuaHook_MomentumBladesIncrease()
   hitCounterDrain = false
   if kratos:HasMeter("MomentumBlades") then
     game.Audio.SetBusLevelRTPCValue("WPN_Blades_Momentum_Level", kratos:MeterGetValue("MomentumBlades") / kratos:MeterGetMax("MomentumBlades"))
   end
 end
+
 function LuaHook_MomentumSpearIncrease()
   hitCounterDrain = false
 end
+
 function GiveEquipment(equipmentName)
   if game.Equipment.CanCreate(equipmentName) then
     local equipmentID = game.Equipment.CreateEquipment(equipmentName)
     game.Wallets.AddEquipment("HERO", equipmentID)
   end
 end
+
 local offscreenindicatorName = "indicator"
 local offscreenTable = {}
+
 function OffScreenRingUpate(player)
   local enemiesAround = player:FindEnemies(40)
   for _, i in ipairs(enemiesAround) do
@@ -2884,6 +3062,7 @@ function OffScreenRingUpate(player)
     end
   end
 end
+
 function CreatureExistsInTable(thisCreature, thisTable)
   for _, i in ipairs(thisTable) do
     if i.thisCreature == thisCreature then
@@ -2892,7 +3071,9 @@ function CreatureExistsInTable(thisCreature, thisTable)
   end
   return false
 end
+
 local offscreenTableSon = {}
+
 function OffScreenRingSonUpate(player)
   local i = game.AI.FindSon()
   if i == nil then
@@ -2929,6 +3110,7 @@ function OffScreenRingSonUpate(player)
     end
   end
 end
+
 function BreatheFrequencyRTPC()
   if kratos == nil then
     return 0
@@ -2939,6 +3121,7 @@ function BreatheFrequencyRTPC()
     return 0
   end
 end
+
 function BreatheAmplitudeRTPC()
   if kratos == nil then
     return 0
@@ -2949,6 +3132,7 @@ function BreatheAmplitudeRTPC()
     return 0
   end
 end
+
 function MOV_PercentageRTPC()
   if kratos ~= nil then
     return kratos:GetActiveMovePercent() * 100
@@ -2956,6 +3140,7 @@ function MOV_PercentageRTPC()
     return 0
   end
 end
+
 function LuaHookDecision_TargetUseSafeSpots(player)
   local target = player:GetTargetCreature()
   if target ~= nil and target:HasMarker("UseSafeSpots") then
@@ -2963,6 +3148,7 @@ function LuaHookDecision_TargetUseSafeSpots(player)
   end
   return false
 end
+
 function LuaHookDecision_BaldurCheckCloseThrow(ai, data)
   if ai ~= nil then
     local myLevel = game.FindLevel("For300_BossArena")
@@ -2977,12 +3163,15 @@ function LuaHookDecision_BaldurCheckCloseThrow(ai, data)
   end
   return data:FindOutcomeBranchesEntry("Far")
 end
+
 function LuaHook_ZiplineMaxSpeedOverride(ai)
   ai:SetMaxSpeedOverride(100)
 end
+
 function LuaHook_ZiplineClearMaxSpeedOverride(ai)
   ai:ClearMaxSpeedOverride()
 end
+
 function LuaHook_ValkBlightStart()
   local thisLevel = kratos.GroundLevel
   if thisLevel == "WAD_Nid100_Entrance" or thisLevel == game.FindLevel("Nid100_Entrance") or thisLevel == game.FindLevel("Nid310_NWRoom") then
@@ -2990,42 +3179,52 @@ function LuaHook_ValkBlightStart()
     kratos:MeterSetValue("Health", kratos:MeterGetMax("Health"))
   end
 end
+
 function LuaHook_ValkBlightEnd()
   local thisLevel = kratos.GroundLevel
   if thisLevel == "WAD_Nid100_Entrance" or thisLevel == game.FindLevel("Nid100_Entrance") or thisLevel == game.FindLevel("Nid310_NWRoom") then
     LuaHook_NiflheimBlightEnd()
   end
 end
+
 function LuaHook_NiflheimBlightStart()
   kratos:PickupAcquire("Debuff_Hero_Blight")
   kratos:PickupAcquire("Debuff_Hero_Blight_Protection")
 end
+
 function LuaHook_NiflheimBlightEnd()
   if kratos:PickupIsAcquired("Debuff_Hero_Blight_Protection") then
     kratos:PickupRelinquish("Debuff_Hero_Blight_Protection")
   end
   timer.StartCreatureTimer(0.5, RemoveBlightPickupHelper)
 end
+
 function RemoveBlightPickupHelper()
   if kratos:PickupIsAcquired("Debuff_Hero_Blight") then
     kratos:PickupRelinquish("Debuff_Hero_Blight")
   end
 end
+
 function LuaHook_NiflheimBlightProtectionIncreaseSml()
   kratos:MeterSetValue("NiflheimBlightProtection", 10)
 end
+
 function LuaHook_NiflheimBlightProtectionIncreaseMed()
   kratos:MeterSetValue("NiflheimBlightProtection", 20)
 end
+
 function LuaHook_NiflheimBlightProtectionIncreaseLrg()
   kratos:MeterSetValue("NiflheimBlightProtection", 50)
 end
+
 function LuaHook_NiflheimBlightProtectionIncreaseFull()
   kratos:MeterSetValue("NiflheimBlightProtection", 200)
 end
+
 function LuaHook_GiveEvadeTimer()
   kratos:PickupAcquire("EvadeRollTimer", 0)
 end
+
 function LuaHook_ClearWarpData()
   local gbl00 = game.FindLevel("Gbl000_FastTravel")
   if gbl00 ~= nil then
@@ -3042,17 +3241,24 @@ function LuaHook_ClearWarpData()
     bboard:Erase("FinalDestinationMarker")
   end
 end
+
 function LuaHook_OnKratosBlockReact(player)
 end
+
 function LuaHook_OnKratosBlockBreakReact(player)
 end
+
 function LuaHook_OnKratosParryReact(player)
 end
+
 function LuaHook_OnKratosParryFast(player)
 end
+
 function LuaHook_OnKratosHitReact(player)
 end
+
 local bladesCounter = 0
+
 function PlayBladeAudioOnLoad()
   bladesCounter = bladesCounter + 1
   local currentWeapon = kratos.GetCurrentWeapon and kratos:GetCurrentWeapon() or nil
@@ -3066,7 +3272,9 @@ function PlayBladeAudioOnLoad()
     end
   end
 end
+
 local hundredPrctAnimFrameCount = 0
+
 function MimirHeadIdleSetup()
   local mimirHead = game.Player.FindPlayer().MimirHead
   if mimirHead ~= nil then
@@ -3096,6 +3304,7 @@ function MimirHeadIdleSetup()
     end
   end
 end
+
 function LuaHook_PlayMomentumAxeConcussion(player)
   local concussionParams = {
     Tweak = "CNC_AXE_FROST_MOMENTUM_FULL_FIXED_POSITION",
@@ -3104,6 +3313,7 @@ function LuaHook_PlayMomentumAxeConcussion(player)
   }
   game.Combat.PlayConcussion(concussionParams)
 end
+
 function Debug_PlayConcussionOnPlayer(player)
   local concussionParams = {
     Tweak = "CNC_DEBUG_VFS_FORCE_DAMAGE",
@@ -3112,9 +3322,11 @@ function Debug_PlayConcussionOnPlayer(player)
   }
   game.Combat.PlayConcussion(concussionParams)
 end
+
 function LuaHook_SpawnGameObject(C, spawnArgs)
   C:SpawnGameObject(spawnArgs)
 end
+
 function LuaHook_Baldur2Fight_Punch()
   local cineNum = game.Level.GetVariable("CompletedCineNumber")
   local peak800 = game.FindLevel("Peak800_DragonRide")
@@ -3122,54 +3334,66 @@ function LuaHook_Baldur2Fight_Punch()
     peak800:GetGameObject("Peak800_Banter"):CallScript("KratosPunch_Banters")
   end
 end
+
 local enum_UseWorld = tweaks.eControls.kC_UseWorld
+
 function LuaHook_AccessibilityCheck()
   local pad = game.Pad.GetPad(0)
   if pad and game.GetRepeatedButtonPressChoice() == 1 and IsPlayer() and pad and pad:IsControlDown(enum_UseWorld) then
     kratos:TriggerMoveEvent("LE_AccessibilityBranch")
   end
 end
+
 function LuaHook_RopeDrop(creature)
   local interactObj = kratos:GetCurrentInteractObject()
   if interactObj ~= nil then
     interactObj:CallScript("ChainedObjectDrop")
   end
 end
+
 function LuaHook_CombatInteract_PillarSwingBreak(creature)
 end
+
 function SetCurrentCarryObject(creature, obj)
   if obj ~= nil then
     currentCarry = obj
   end
 end
+
 function AttemptToDropCurrentCarry(creature, obj)
   if currentCarry ~= nil and creature:HasMarker("CrystalCarry") then
     currentCarry:CallScript("StartCarryExit")
   end
 end
+
 function ClearCurrentCarryObject()
   currentCarry = nil
 end
+
 function SetCurrentBaseObject(creature, obj)
   if obj ~= nil then
     currentBase = obj
     PassBaseToCrystal()
   end
 end
+
 function PassBaseToCrystal()
   if currentCarry ~= nil and currentBase ~= nil then
     currentCarry:CallScript("SetCurrentBaseOnCrystal", currentBase)
   end
 end
+
 function ClearCurrentBaseObject()
   currentBase = nil
 end
+
 function LuaHook_SetCrystalSocketed()
   if currentCarry ~= nil then
     currentCarry:CallScript("OnPutDown")
     currentCarry:CallScript("SetSocketed", true)
   end
 end
+
 function LuaHookDecision_RageR1SpeedUpCheck(player)
   local target = player:GetTargetCreature()
   if target ~= nil and DL.GetDistanceBetweenTwoObjects(player, target) < 5 then
@@ -3177,6 +3401,7 @@ function LuaHookDecision_RageR1SpeedUpCheck(player)
   end
   return false
 end
+
 function LuaHookDecision_CanRageSeekPunchInAirToTarget(player)
   local target = player:GetTargetCreature()
   if target == nil then
@@ -3198,9 +3423,11 @@ function LuaHookDecision_CanRageSeekPunchInAirToTarget(player)
     return false
   end
 end
+
 function LuaHook_RemoveBloodFromHero(player)
   game.Combat.ForceBloodDecayInCombat(true)
 end
+
 function LuaHook_AddBlood_Baldur_MMA_Reaction(player)
   player:AddBlood(game.GameObject.eRegionId.kHead, 0.2)
   player:AddBlood(game.GameObject.eRegionId.kLeftChest, 0.1)
@@ -3213,6 +3440,7 @@ function LuaHook_AddBlood_Baldur_MMA_Reaction(player)
   player:AddBlood(game.GameObject.eRegionId.kLeftBackUpperArm, 0.1)
   player:AddBlood(game.GameObject.eRegionId.kLeftBackLowerArm, 0.1)
 end
+
 function LuaHook_AddBlood_Baldur_MMA_LeftHand(player)
   player:AddBlood(game.GameObject.eRegionId.kHead, 0.05)
   player:AddBlood(game.GameObject.eRegionId.kLeftChest, 0.1)
@@ -3225,6 +3453,7 @@ function LuaHook_AddBlood_Baldur_MMA_LeftHand(player)
   player:AddBlood(game.GameObject.eRegionId.kLeftBackUpperArm, 0.2)
   player:AddBlood(game.GameObject.eRegionId.kLeftBackLowerArm, 0.4)
 end
+
 function LuaHook_AddBlood_Baldur_MMA_RightHand(player)
   player:AddBlood(game.GameObject.eRegionId.kHead, 0.05)
   player:AddBlood(game.GameObject.eRegionId.kLeftChest, 0.1)
@@ -3237,6 +3466,7 @@ function LuaHook_AddBlood_Baldur_MMA_RightHand(player)
   player:AddBlood(game.GameObject.eRegionId.kRightBackUpperArm, 0.2)
   player:AddBlood(game.GameObject.eRegionId.kRightBackLowerArm, 0.4)
 end
+
 function LuaHook_AddBlood_Baldur_Pummel(player)
   player:AddBlood(game.GameObject.eRegionId.kHead, 0.025)
   player:AddBlood(game.GameObject.eRegionId.kLeftChest, 0.05)
@@ -3253,6 +3483,7 @@ function LuaHook_AddBlood_Baldur_Pummel(player)
   player:AddBlood(game.GameObject.eRegionId.kRightBackUpperArm, 0.05)
   player:AddBlood(game.GameObject.eRegionId.kRightBackLowerArm, 0.1)
 end
+
 function LuaHook_AddBlood_Magni_Finisher(player)
   player:AddBlood(game.GameObject.eRegionId.kHead, 0.6)
   player:AddBlood(game.GameObject.eRegionId.kLeftChest, 0.8)
@@ -3270,15 +3501,18 @@ function LuaHook_AddBlood_Magni_Finisher(player)
   player:AddBlood(game.GameObject.eRegionId.kRightBackUpperArm, 0.4)
   player:AddBlood(game.GameObject.eRegionId.kRightBackLowerArm, 0.2)
 end
+
 function LuaHookDecision_IsDefaultRageModeInput(C, data)
   if game.GetCurrentOptionIndexForSetting ~= nil and game.GetCurrentOptionIndexForSetting("RageMode") == 1 then
     return false
   end
   return true
 end
+
 function LuaHook_ClearRageModeUIMessage(C, data)
   uiCalls.DisableMechanicRage()
 end
+
 function FindCreatureByID(enemyID)
   local foundCreature
   for creature in game.Creature.IterateAllCreatures() do
@@ -3289,6 +3523,7 @@ function FindCreatureByID(enemyID)
   end
   return foundCreature
 end
+
 function getOnScreenEnemySorted()
   local player = game.Player.FindPlayer()
   local creaturesOnScreen = {}
@@ -3300,6 +3535,7 @@ function getOnScreenEnemySorted()
   end
   return creaturesOnScreen
 end
+
 function CheckForCompanionContextualR3(C)
   if not C:CheckDynamicFlag("InContextualR3FollowUp") then
     local currentTarget = C:GetTargetCreature()
@@ -3308,6 +3544,7 @@ function CheckForCompanionContextualR3(C)
     end
   end
 end
+
 local bladeTwirlCharge = {
   updateDecrement = 30,
   maxChargeValue = 100,
@@ -3320,6 +3557,7 @@ local bladeTwirlCharge = {
   currentDrainTime = 0
 }
 local enum_AxeRecall = tweaks.eControls.kC_AxeRecall
+
 function UpdateWhiplash(C)
   local hasWhiplashFlag = C:CheckDynamicFlag("Whiplash")
   if hasWhiplashFlag then
@@ -3363,19 +3601,23 @@ function UpdateWhiplash(C)
     bladeTwirlCharge.currentDrainTime = 0
   end
 end
+
 function LuaHook_Whiplash_Charged(C)
   bladeTwirlCharge.currentDrainTime = 0
 end
+
 function AddChargeToWhiplashMeter_Lua(C, twirlAmount, useTimerHack)
   bladeTwirlCharge.currentDrainTime = 0
   local currentMeter = C:MeterGetValue("WhiplashMeter")
   local newMeterValue = currentMeter + twirlAmount
   C:MeterSetValue("WhiplashMeter", newMeterValue)
 end
+
 function LuaHook_BladeTwirlEnterChargedMaxed(C)
   bladeTwirlCharge.currentDrainTime = 0
   C:MeterSetValue("WhiplashMeter", C:MeterGetMax("WhiplashMeter"))
 end
+
 local lastEquippedShield
 local equippableShields = {
   Guardian = 0,
@@ -3384,11 +3626,13 @@ local equippableShields = {
   Buster = 3,
   Blitz = 4
 }
-local OnShieldEquipped = function(C, equippedShield)
+
+local function OnShieldEquipped(C, equippedShield)
   if (equippedShield == equippableShields.Siege or equippedShield == equippableShields.Buster) and C:HasMeter("DefenseMeter") then
     C:MeterSetValue("DefenseMeter", C:MeterGetMax("DefenseMeter"))
   end
 end
+
 local ignore = 0
 local has = 1
 local notHas = 2
@@ -3954,6 +4198,7 @@ local scriptedMatAnimStates = {
   }
 }
 local Samurai_CSClashHash = game.LargeInteger.HashString("Samurai_CSClash")
+
 function UpdateScriptedMaterialAnims(C, player)
   local hasSamurai_CSClashHash = false
   if DynamicFlagLargeIntegerOptimization then
@@ -4035,8 +4280,10 @@ function UpdateScriptedMaterialAnims(C, player)
     end
   end
 end
+
 local siegeGuardChargeMaxFrame = 44
-local GetSiegeMatAnimFrameFromDefenseMeter = function(C)
+
+local function GetSiegeMatAnimFrameFromDefenseMeter(C)
   local currentDefenseMeterValue = C:MeterGetValue("DefenseMeter")
   if currentDefenseMeterValue == 100 then
     return 0
@@ -4050,8 +4297,10 @@ local GetSiegeMatAnimFrameFromDefenseMeter = function(C)
     return siegeGuardChargeMaxFrame
   end
 end
+
 local shieldChargeUp = "kratosShield00_siege_chargeUp"
 local shieldChargeUpHash = game.LargeInteger.HashString("kratosShield00_siege_chargeUp")
+
 function UpdateShieldChargeMaterialAnims(C, player)
   if C:CheckDynamicFlag("InVendorUI") == true then
     return false
@@ -4268,6 +4517,7 @@ function UpdateShieldChargeMaterialAnims(C, player)
     return false
   end
 end
+
 function LuaHook_OnSiegeChargeCleared(C)
   local object = GetShieldWeapon()
   object:JumpAnimationToFrame(1, {
@@ -4278,6 +4528,7 @@ function LuaHook_OnSiegeChargeCleared(C)
     Rate = -1.5
   })
 end
+
 function LuaHook_OnBlitzRushCleared(C)
   local object = GetShieldWeapon()
   object:JumpAnimationToFrame(1, {
